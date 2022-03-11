@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "gocoffe",
+    "slug": "gocoffe",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "gocoffe"
+}
