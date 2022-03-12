@@ -18,13 +18,12 @@ const Home: React.FC = () => {
                             uri: 'https://avatars.githubusercontent.com/u/7297243?s=400&v=4',
                         }}
                     />
-                    <Styled.SignOut
-                        onPress={() => {
-                            console.log('cliquei aqui');
-                        }}
+                    <Styled.SignOutButton
+                        hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}
+                        onPress={() => {}}
                     >
-                        Sign out
-                    </Styled.SignOut>
+                        <Styled.SignOut>Sign out</Styled.SignOut>
+                    </Styled.SignOutButton>
                 </Styled.ProfileContent>
             </Styled.Header>
 

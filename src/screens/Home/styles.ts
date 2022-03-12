@@ -43,6 +43,8 @@ export const PhotoProfile = styled.Image`
     border-radius: 100px;
 `;
 
+export const SignOutButton = styled.View``;
+
 export const SignOut = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.regular};
     color: ${({ theme }) => theme.COLORS.secondary};
