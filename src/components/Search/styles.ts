@@ -9,13 +9,19 @@ export const Container = styled.View`
     border-radius: 10px;
 `;
 
-export const SearchInput = styled.TextInput`
+export const InputContent = styled.View`
+    flex-direction: row;
+    align-items: center;
     width: 70%;
+    padding: 0 20px;
+`;
+
+export const SearchInput = styled.TextInput`
     background-color: ${({ theme }) => theme.COLORS.secondary_background};
     color: ${({ theme }) => theme.COLORS.primary_title};
     border-radius: 10px;
     height: 50px;
-    padding: 0 15px;
+    margin-left: 10px;
     font-size: ${RFValue(14)}px;
     font-family: ${({ theme }) => theme.FONTS.regular};
 `;
