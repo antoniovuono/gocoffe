@@ -11,6 +11,12 @@ export const Header = styled.View`
     width: 100%;
     margin-top: ${getStatusBarHeight() + 30}px;
     padding: 0 20px;
+    flex-direction: row;
+    align-items: center;
+`;
+
+export const DetailsContent = styled.View`
+    width: 80%;
 `;
 
 export const WelcomeTitle = styled.Text`
@@ -23,6 +29,25 @@ export const Title = styled.Text`
     font-size: ${RFValue(24)}px;
     font-family: ${({ theme }) => theme.FONTS.semi_bold};
     color: ${({ theme }) => theme.COLORS.primary_title};
+`;
+
+export const ProfileContent = styled.View`
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+`;
+
+export const PhotoProfile = styled.Image`
+    width: ${RFValue(48)}px;
+    height: ${RFValue(48)}px;
+    border-radius: 100px;
+`;
+
+export const SignOut = styled.Text`
+    font-family: ${({ theme }) => theme.FONTS.regular};
+    color: ${({ theme }) => theme.COLORS.secondary};
+    font-size: ${RFValue(10)}px;
+    margin-top: 10px;
 `;
 
 export const SearchSection = styled.View`
