@@ -18,6 +18,7 @@ const Home: React.FC = () => {
                         source={{
                             uri: 'https://avatars.githubusercontent.com/u/7297243?s=400&v=4',
                         }}
+                        resizeMode="contain"
                     />
                     <Styled.SignOutButton
                         hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
             </Styled.SearchSection>
 
             <Styled.PromotionContent>
-                <Styled.PromotionTitle>Promo for you</Styled.PromotionTitle>
+                <Styled.PromotionTitle>Promo For You</Styled.PromotionTitle>
 
                 <Styled.PromoImage source={PromoImage} />
             </Styled.PromotionContent>

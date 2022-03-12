@@ -38,8 +38,8 @@ export const ProfileContent = styled.View`
 `;
 
 export const PhotoProfile = styled.Image`
-    width: ${RFValue(48)}px;
-    height: ${RFValue(48)}px;
+    width: ${RFValue(55)}px;
+    height: ${RFValue(55)}px;
     border-radius: 100px;
 `;
 
