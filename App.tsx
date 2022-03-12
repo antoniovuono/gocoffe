@@ -1,14 +1,16 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
+import { StatusBar } from 'expo-status-bar';
+
 import {
     useFonts,
     Poppins_400Regular,
     Poppins_600SemiBold,
     Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
-import theme from './src/theme';
 
+import theme from './src/theme';
 import Home from './src/screens/Home';
 
 export default function App() {
@@ -24,6 +26,11 @@ export default function App() {
 
     return (
         <ThemeProvider theme={theme}>
+            <StatusBar
+                translucent
+                style="light"
+                backgroundColor="transparent"
+            />
             <Home />
         </ThemeProvider>
     );

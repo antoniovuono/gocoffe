@@ -23,6 +23,7 @@
         "prettier"
     ],
     "rules": {
+        "react/style-prop-object": "off",
         "camelcase": "off",
         "@typescript-eslint/no-empty-interface": "off",
         "react/function-component-definition": "off",

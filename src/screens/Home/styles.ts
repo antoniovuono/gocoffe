@@ -4,10 +4,11 @@ export const Container = styled.View`
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: ${({ theme }) => theme.COLORS.primary_background};
 `;
 
 export const Title = styled.Text`
     font-size: 30px;
-    color: white;
+    font-family: ${({ theme }) => theme.FONTS.bold};
+    color: ${({ theme }) => theme.COLORS.primary_title};
 `;
