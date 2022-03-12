@@ -24,3 +24,8 @@ export const Title = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.semi_bold};
     color: ${({ theme }) => theme.COLORS.primary_title};
 `;
+
+export const SearchSection = styled.View`
+    width: 100%;
+    padding: 20px;
+`;

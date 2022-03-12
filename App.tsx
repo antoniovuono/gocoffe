@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
@@ -6,6 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import {
     useFonts,
     Poppins_400Regular,
+    Poppins_500Medium,
     Poppins_600SemiBold,
     Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
@@ -16,6 +18,7 @@ import Home from './src/screens/Home';
 export default function App() {
     const [fontsLoaded] = useFonts({
         Poppins_400Regular,
+        Poppins_500Medium,
         Poppins_600SemiBold,
         Poppins_700Bold,
     });
