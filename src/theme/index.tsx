@@ -9,5 +9,9 @@ export default {
         success: '#34C800',
     },
 
-    FONTS: {},
+    FONTS: {
+        regular: 'Poppins_400Regular',
+        semi_bold: 'Poppins_600SemiBold',
+        bold: 'Poppins_700Bold',
+    },
 };

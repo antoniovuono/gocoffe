@@ -23,6 +23,7 @@
         "prettier"
     ],
     "rules": {
+        "camelcase": "off",
         "@typescript-eslint/no-empty-interface": "off",
         "react/function-component-definition": "off",
         "react-hooks/rules-of-hooks": "error",
