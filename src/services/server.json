@@ -1,9 +1,68 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "products": [
+    {
+      "id": "0f4f5f2b-8f92-4874-895d-034003cbd189",
+      "name": "Cappuccino",
+      "type": "With chocolate",
+      "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
+      "rating": 4.5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 1.75,
+      "price_medium": 2.75,
+      "price_large": 4.5
+    },
+    {
+      "id": "e2d9a040-332e-4808-bcfa-b5b90ac48e6c",
+      "name": "Cappuccino",
+      "type": "With cream",
+      "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+      "rating": 4.5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 1.4,
+      "price_medium": 2.4,
+      "price_large": 4.3
+    },
+    {
+      "id": "4c580df6-46f3-4c2e-bc5b-903cec6a4a55",
+      "name": "Cappuccino",
+      "type": "Iced",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
+      "description": "An iced cappuccino is a coffee drink with espresso, milk, ice, and optional sweetener. It's very similar to an iced latte, which makes sense since a cappuccino vs latte are incredibly similar. The difference? A Starbucks iced cappuccino uses just a splash of milk in the espresso and adds cold foam as a frothy topping.",
+      "rating": 4.5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 1.5,
+      "price_medium": 2.5,
+      "price_large": 4.3
+    },
+    {
+      "id": "483bfadc-a021-4fbc-a2fe-2bd18fc920f5",
+      "name": "Cappuccino",
+      "type": "Flat white",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121795/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.49.39_nrobjh.png",
+      "description": "An iced cappuccino is a coffee drink with espresso, milk, ice, and optional sweetener. It's very similar to an iced latte, which makes sense since a cappuccino vs latte are incredibly similar. The difference? A Starbucks iced cappuccino uses just a splash of milk in the espresso and adds cold foam as a frothy topping.",
+      "rating": 4.5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 1.6,
+      "price_medium": 2.5,
+      "price_large": 4.6
+    }
+  ],
+  "cart": [],
+  "orders": []
 }
