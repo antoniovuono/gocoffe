@@ -3,6 +3,8 @@ export default {
         primary_background: '#18171B',
         secondary_background: '#26252B',
         secondary: '#EA8C00',
+        secondary_dark: '#6C4101',
+        secondary_medium: '#BE7301',
         primary_title: '#FFFFFF',
         secondary_title: '#3F3F3F',
         warning: '#FF0000',

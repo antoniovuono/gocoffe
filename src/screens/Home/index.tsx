@@ -1,4 +1,5 @@
 import React from 'react';
+import PromoImage from '../../assets/images/banner.png';
 import Search from '../../components/Search';
 import * as Styled from './styles';
 
@@ -34,6 +35,12 @@ const Home: React.FC = () => {
                     onPress={() => {}}
                 />
             </Styled.SearchSection>
+
+            <Styled.PromotionContent>
+                <Styled.PromotionTitle>Promo for you</Styled.PromotionTitle>
+
+                <Styled.PromoImage source={PromoImage} />
+            </Styled.PromotionContent>
         </Styled.Container>
     );
 };

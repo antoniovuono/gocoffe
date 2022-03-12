@@ -56,3 +56,20 @@ export const SearchSection = styled.View`
     width: 100%;
     padding: 20px;
 `;
+
+export const PromotionContent = styled.View`
+    width: 100%;
+    padding: 0 20px;
+`;
+
+export const PromotionTitle = styled.Text`
+    font-size: ${RFValue(14)}px;
+    font-family: ${({ theme }) => theme.FONTS.semi_bold};
+    color: ${({ theme }) => theme.COLORS.primary_title};
+`;
+
+export const PromoImage = styled.Image`
+    height: ${RFValue(123)}px;
+    width: 100%;
+    margin-top: 15px;
+`;
