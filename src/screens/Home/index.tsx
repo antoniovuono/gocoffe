@@ -12,7 +12,11 @@ const Home: React.FC = () => {
             </Styled.Header>
 
             <Styled.SearchSection>
-                <Search placeholder="Find your coffee" button_title="Search" />
+                <Search
+                    placeholder="Find your coffee"
+                    button_title="Search"
+                    onPress={() => {}}
+                />
             </Styled.SearchSection>
         </Styled.Container>
     );

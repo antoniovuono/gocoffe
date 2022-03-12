@@ -23,6 +23,8 @@
         "prettier"
     ],
     "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "react/jsx-props-no-spreading": "off",
         "import/prefer-default-export": "off",
         "react/style-prop-object": "off",
         "camelcase": "off",
