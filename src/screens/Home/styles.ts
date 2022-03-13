@@ -71,10 +71,16 @@ export const PromotionTitle = styled.Text`
 export const PromoImage = styled.Image`
     height: ${RFValue(123)}px;
     width: 100%;
-    margin-top: 15px;
+    margin-top: ${RFValue(14)}px;
 `;
 
-export const FilterButtons = styled.ScrollView`
+export const FilterButtons = styled.View`
     width: 100%;
     margin-top: 15px;
+    flex-direction: row;
+`;
+
+export const ProductsList = styled.View`
+    padding: 0 20px;
+    margin-top: ${RFValue(10)}px;
 `;

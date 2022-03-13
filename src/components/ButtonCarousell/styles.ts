@@ -17,7 +17,7 @@ export const ButtonProductType = styled(RectButton)<{ selected?: boolean }>`
 
 export const ButtonTitle = styled.Text<{ selected?: boolean }>`
     font-family: ${({ theme }) => theme.FONTS.medium};
-    color: ${({ theme }) => theme.COLORS.thirty};
+    color: ${({ theme }) => theme.COLORS.third_background};
     font-size: ${RFValue(12)}px;
 
     ${({ selected }) =>
