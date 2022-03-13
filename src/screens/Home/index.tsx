@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import Toast from 'react-native-toast-message';
 import PromoImage from '../../assets/images/banner.png';
 import ButtonCarousell from '../../components/ButtonCarousell';
 import Search from '../../components/Search';
 import * as Styled from './styles';
 import ProductComponent from '../../components/ProductComponent/index';
 import useProducts from '../../hooks/useProducts';
+import { IProducts } from '../../interfaces/IProducts';
 
 const Home: React.FC = () => {
-    const [products, setProducts] = useState();
+    const [products, setProducts] = useState<IProducts[]>([]);
     const [selectedAll, setSelectedAll] = useState(false);
-
-    console.log(products);
 
     const { getProductsDetails } = useProducts();
 
@@ -21,10 +21,13 @@ const Home: React.FC = () => {
     const fetchProducts = async () => {
         try {
             const response = await getProductsDetails();
-            console.log(response);
             setProducts(response);
         } catch (error) {
-            console.error(error);
+            Toast.show({
+                type: 'error',
+                text1: 'Erro ao carregar produtos',
+                text2: 'Nāo foi possível carregar os produtos!',
+            });
         }
     };
 
@@ -61,7 +64,13 @@ const Home: React.FC = () => {
                 <Search
                     placeholder="Find your coffee"
                     button_title="Search"
-                    onPress={() => {}}
+                    onPress={() => {
+                        Toast.show({
+                            type: 'success',
+                            text1: 'Sucesso',
+                            text2: 'pesquisa feita com sucesso',
+                        });
+                    }}
                 />
             </Styled.SearchSection>
 
@@ -82,16 +91,24 @@ const Home: React.FC = () => {
                 <ButtonCarousell title="Latte" />
             </Styled.FilterButtons>
 
-            <Styled.ProductsList>
-                <ProductComponent
-                    product_image="https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png"
-                    product_review={4.3}
-                    product_name="Cappuccino"
-                    product_detail="With chocolate"
-                    product_price={4.65}
-                    onAddToCart={() => {}}
+            <Styled.ProductsListContent>
+                <Styled.ProductsList
+                    data={products}
+                    numColumns={2}
+                    showsVerticalScrollIndicator={false}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => (
+                        <ProductComponent
+                            product_image="https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png"
+                            product_review={4.3}
+                            product_name="Cappuccino"
+                            product_detail="With chocolate"
+                            product_price={4.65}
+                            onAddToCart={() => {}}
+                        />
+                    )}
                 />
-            </Styled.ProductsList>
+            </Styled.ProductsListContent>
         </Styled.Container>
     );
 };

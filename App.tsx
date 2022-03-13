@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import Toast from 'react-native-toast-message';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import { StatusBar } from 'expo-status-bar';
@@ -29,15 +30,19 @@ export default function App() {
     }
 
     return (
-        <ThemeProvider theme={theme}>
+        <>
             <StatusBar
                 translucent
                 style="light"
                 backgroundColor="transparent"
             />
-            <ProductsProvider>
-                <Home />
-            </ProductsProvider>
-        </ThemeProvider>
+
+            <ThemeProvider theme={theme}>
+                <ProductsProvider>
+                    <Home />
+                    <Toast />
+                </ProductsProvider>
+            </ThemeProvider>
+        </>
     );
 }

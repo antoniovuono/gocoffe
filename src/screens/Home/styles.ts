@@ -80,7 +80,11 @@ export const FilterButtons = styled.View`
     flex-direction: row;
 `;
 
-export const ProductsList = styled.View`
-    padding: 0 20px;
+export const ProductsListContent = styled.View`
     margin-top: ${RFValue(10)}px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 530px;
 `;
+
+export const ProductsList = styled.FlatList``;

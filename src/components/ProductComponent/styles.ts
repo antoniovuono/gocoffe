@@ -6,6 +6,7 @@ export const Container = styled.View`
     width: ${RFValue(159)}px;
     height: ${RFValue(213)}px;
     border-radius: 20px;
+    margin: 5px;
 `;
 
 export const ImageContent = styled.View`
