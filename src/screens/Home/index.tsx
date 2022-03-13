@@ -5,10 +5,10 @@ import Search from '../../components/Search';
 import * as Styled from './styles';
 
 const Home: React.FC = () => {
-    const [selectedFilter, setSelectedFitler] = useState(false);
+    const [selectedAll, setSelectedAll] = useState(false);
 
-    const handleClickFilter = () => {
-        setSelectedFitler(!selectedFilter);
+    const handleClickAllFilter = () => {
+        setSelectedAll(!selectedAll);
     };
 
     return (
@@ -51,16 +51,11 @@ const Home: React.FC = () => {
             </Styled.PromotionContent>
 
             <Styled.FilterButtons horizontal>
-                {selectedFilter ? (
-                    <ButtonCarousell
-                        title="All"
-                        onPress={handleClickFilter}
-                        selected_item
-                    />
-                ) : (
-                    <ButtonCarousell title="All" onPress={handleClickFilter} />
-                )}
-
+                <ButtonCarousell
+                    title="All"
+                    onPress={handleClickAllFilter}
+                    selected_item={selectedAll}
+                />
                 <ButtonCarousell title="Espresso" />
                 <ButtonCarousell title="Romano" />
                 <ButtonCarousell title="Latte" />
