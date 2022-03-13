@@ -4,6 +4,7 @@
       "id": "0f4f5f2b-8f92-4874-895d-034003cbd189",
       "name": "Cappuccino",
       "type": "With chocolate",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
       "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
       "rating": 4.5,
       "size": [
@@ -19,6 +20,7 @@
       "id": "e2d9a040-332e-4808-bcfa-b5b90ac48e6c",
       "name": "Cappuccino",
       "type": "With cream",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
       "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
       "rating": 4.5,
       "size": [
