@@ -63,7 +63,14 @@ const Home: React.FC = () => {
             </Styled.FilterButtons>
 
             <Styled.ProductsList>
-                <ProductComponent />
+                <ProductComponent
+                    product_image="https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png"
+                    product_review={4.3}
+                    product_name="Cappuccino"
+                    product_detail="With chocolate"
+                    product_price={4.65}
+                    onAddToCart={() => {}}
+                />
             </Styled.ProductsList>
         </Styled.Container>
     );

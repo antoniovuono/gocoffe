@@ -3,29 +3,48 @@ import StarIcon from '../../assets/icons/star.svg';
 import AddIcon from '../../assets/icons/plus.svg';
 import * as Styled from './styles';
 
-const ProductComponent: React.FC = () => {
+interface IProductComponent {
+    product_image: string;
+    product_review: number;
+    product_name: string;
+    product_detail: string;
+    product_price: number;
+    onAddToCart: () => void;
+}
+
+const ProductComponent: React.FC<IProductComponent> = ({
+    product_image,
+    product_review,
+    product_name,
+    product_detail,
+    product_price,
+    ...rest
+}) => {
     return (
         <Styled.Container>
             <Styled.ImageContent>
                 <Styled.ProductImage
                     source={{
-                        uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png',
+                        uri: product_image,
                     }}
                 />
                 <Styled.ProductReviewContent>
                     <StarIcon width={15} height={15} />
-                    <Styled.ProductReview>4.5</Styled.ProductReview>
+                    <Styled.ProductReview>
+                        {product_review}
+                    </Styled.ProductReview>
                 </Styled.ProductReviewContent>
             </Styled.ImageContent>
 
             <Styled.DetailsContent>
-                <Styled.ProductName>Cappuccino</Styled.ProductName>
-                <Styled.ProductDetail>With chocolate</Styled.ProductDetail>
+                <Styled.ProductName>{product_name}</Styled.ProductName>
+                <Styled.ProductDetail>{product_detail}</Styled.ProductDetail>
                 <Styled.ProductPrice>
-                    <Styled.ProductPrice dollar>R$</Styled.ProductPrice> 5.60
+                    <Styled.ProductPrice dollar>R$ </Styled.ProductPrice>
+                    {product_price}
                 </Styled.ProductPrice>
 
-                <Styled.AddToCard>
+                <Styled.AddToCard {...rest}>
                     <AddIcon />
                 </Styled.AddToCard>
             </Styled.DetailsContent>
