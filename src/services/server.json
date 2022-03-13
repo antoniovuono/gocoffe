@@ -61,6 +61,70 @@
       "price_small": 1.6,
       "price_medium": 2.5,
       "price_large": 4.6
+    },
+    {
+      "id": "11d39045-ba08-44be-bbe9-c8fd4b1039a0",
+      "name": "Espresso",
+      "type": "Correto",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142440/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.33.29_jychlp.png",
+      "description": "Espresso (/ɛˈsprɛsoʊ/ (audio speaker iconlisten), Italian: [eˈsprɛsso]) is a coffee-brewing method of Italian origin,[1] in which a small amount of nearly boiling water (about 90 °C or 190 °F) is forced under 9–10 bars (900–1,000 kPa; 130–150 psi) of pressure through finely-ground coffee beans. Espresso coffee can be made with a wide variety of coffee beans and roast degrees.",
+      "rating": 5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 2.6,
+      "price_medium": 3.5,
+      "price_large": 5.6
+    },
+    {
+      "id": "15a350d6-50fa-4754-b0ee-96153fb64554",
+      "name": "Espresso",
+      "type": "Lungo",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png",
+      "description": "Lungo is a coffee beverage made by using an espresso machine to make an Italian-style coffee – short black (a single espresso shot) with more water (generally twice as much), resulting in a larger coffee, a lungo.",
+      "rating": 5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 2.3,
+      "price_medium": 3,
+      "price_large": 5
+    },
+    {
+      "id": "7278861f-c75f-42b0-b2ac-79ea84171cc8",
+      "name": "Espresso",
+      "type": "Romano",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142799/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.39.51_wp3u71.png",
+      "description": "The espresso romano is made by combining an espresso shot with a lemon slice or lemon juice and a teaspoon of sugar. The slice can be squeezed or dropped into the coffee, and is sometimes candied. It's a versatile drink that can be served hot, cold, or iced – and with or without milk.",
+      "rating": 4.2,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 3.3,
+      "price_medium": 4,
+      "price_large": 6
+    },
+    {
+      "id": "62ae0096-3c89-44df-8762-0189452a0155",
+      "name": "American",
+      "type": "American",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png",
+      "description": "Caffè Americano (also known as Americano or American; Italian pronunciation: [kafˈfɛ ameriˈkaːno]; Spanish: café americano, literally American coffee) is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
+      "rating": 5.2,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "price_small": 2.3,
+      "price_medium": 3,
+      "price_large": 5
     }
   ],
   "cart": [],
