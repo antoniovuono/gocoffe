@@ -78,6 +78,8 @@ export const FilterButtons = styled.View`
     width: 100%;
     margin-top: 15px;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ProductsListContent = styled.View`
