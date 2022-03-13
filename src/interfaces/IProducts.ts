@@ -2,6 +2,7 @@ export interface IProducts {
     id: string;
     name: string;
     type: string;
+    photo: string;
     description: string;
     rating: number;
     size: string;

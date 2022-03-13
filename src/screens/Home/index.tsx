@@ -106,11 +106,14 @@ const Home: React.FC = () => {
                         keyExtractor={item => item.id}
                         renderItem={({ item }) => (
                             <ProductComponent
-                                product_image="https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png"
-                                product_review={4.3}
-                                product_name="Cappuccino"
-                                product_detail="With chocolate"
-                                product_price={4.65}
+                                product_image={
+                                    item.photo ||
+                                    'https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png'
+                                }
+                                product_review={item.rating || 0}
+                                product_name={item.name || 'Coffee'}
+                                product_detail={item.type || 'Traditional'}
+                                product_price={item.price_large}
                                 onAddToCart={() => {}}
                             />
                         )}

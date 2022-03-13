@@ -1,6 +1,8 @@
+import styled from 'styled-components/native';
+import React from 'react';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
 export const Container = styled.View`
     flex: 1;
@@ -90,7 +92,9 @@ export const ProductsListContent = styled.View`
     padding-bottom: 20px;
 `;
 
-export const ProductsList = styled.FlatList``;
+export const ProductsList = styled(FlatList).attrs(
+    {},
+)`` as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>;
 
 export const Loader = styled.ActivityIndicator.attrs(({ theme }) => ({
     color: theme.COLORS.secondary,
