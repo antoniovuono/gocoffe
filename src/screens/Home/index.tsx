@@ -11,6 +11,7 @@ import { IProducts } from '../../interfaces/IProducts';
 const Home: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
     const [selectedAll, setSelectedAll] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const { getProductsDetails } = useProducts();
 
@@ -19,15 +20,18 @@ const Home: React.FC = () => {
     };
 
     const fetchProducts = async () => {
+        setLoading(true);
         try {
             const response = await getProductsDetails();
             setProducts(response);
         } catch (error) {
             Toast.show({
                 type: 'error',
-                text1: 'Erro ao carregar produtos',
-                text2: 'Nāo foi possível carregar os produtos!',
+                text1: 'Error',
+                text2: 'Failed to load products.',
             });
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -92,22 +96,26 @@ const Home: React.FC = () => {
             </Styled.FilterButtons>
 
             <Styled.ProductsListContent>
-                <Styled.ProductsList
-                    data={products}
-                    numColumns={2}
-                    showsVerticalScrollIndicator={false}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item }) => (
-                        <ProductComponent
-                            product_image="https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png"
-                            product_review={4.3}
-                            product_name="Cappuccino"
-                            product_detail="With chocolate"
-                            product_price={4.65}
-                            onAddToCart={() => {}}
-                        />
-                    )}
-                />
+                {loading ? (
+                    <Styled.Loader />
+                ) : (
+                    <Styled.ProductsList
+                        data={products}
+                        numColumns={2}
+                        showsVerticalScrollIndicator={false}
+                        keyExtractor={item => item.id}
+                        renderItem={({ item }) => (
+                            <ProductComponent
+                                product_image="https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png"
+                                product_review={4.3}
+                                product_name="Cappuccino"
+                                product_detail="With chocolate"
+                                product_price={4.65}
+                                onAddToCart={() => {}}
+                            />
+                        )}
+                    />
+                )}
             </Styled.ProductsListContent>
         </Styled.Container>
     );

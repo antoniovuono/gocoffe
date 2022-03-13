@@ -81,10 +81,16 @@ export const FilterButtons = styled.View`
 `;
 
 export const ProductsListContent = styled.View`
+    flex: 1;
     margin-top: ${RFValue(10)}px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 530px;
+    padding-bottom: 20px;
 `;
 
 export const ProductsList = styled.FlatList``;
+
+export const Loader = styled.ActivityIndicator.attrs(({ theme }) => ({
+    color: theme.COLORS.secondary,
+    size: 'large',
+}))``;
