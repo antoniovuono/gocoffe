@@ -23,6 +23,7 @@
         "prettier"
     ],
     "rules": {
+        "react/jsx-no-constructed-context-values": "off",
         "react/require-default-props": "off",
         "@typescript-eslint/no-empty-function": "off",
         "react/jsx-props-no-spreading": "off",

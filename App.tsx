@@ -14,6 +14,7 @@ import {
 
 import theme from './src/theme';
 import Home from './src/screens/Home';
+import { ProductsProvider } from './src/hooks/useProducts';
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -34,7 +35,9 @@ export default function App() {
                 style="light"
                 backgroundColor="transparent"
             />
-            <Home />
+            <ProductsProvider>
+                <Home />
+            </ProductsProvider>
         </ThemeProvider>
     );
 }

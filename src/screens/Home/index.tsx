@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PromoImage from '../../assets/images/banner.png';
 import ButtonCarousell from '../../components/ButtonCarousell';
 import Search from '../../components/Search';
 import * as Styled from './styles';
 import ProductComponent from '../../components/ProductComponent/index';
+import useProducts from '../../hooks/useProducts';
 
 const Home: React.FC = () => {
+    const [products, setProducts] = useState();
     const [selectedAll, setSelectedAll] = useState(false);
+
+    console.log(products);
+
+    const { getProductsDetails } = useProducts();
 
     const handleClickAllFilter = () => {
         setSelectedAll(!selectedAll);
     };
+
+    const fetchProducts = async () => {
+        try {
+            const response = await getProductsDetails();
+            console.log(response);
+            setProducts(response);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
 
     return (
         <Styled.Container>
