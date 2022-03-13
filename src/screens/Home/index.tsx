@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PromoImage from '../../assets/images/banner.png';
+import ButtonCarousell from '../../components/ButtonCarousell';
 import Search from '../../components/Search';
 import * as Styled from './styles';
 
 const Home: React.FC = () => {
+    const [selectedFilter, setSelectedFitler] = useState(false);
+
+    const handleClickFilter = () => {
+        setSelectedFitler(!selectedFilter);
+    };
+
     return (
         <Styled.Container>
             <Styled.Header>
@@ -42,6 +49,22 @@ const Home: React.FC = () => {
 
                 <Styled.PromoImage source={PromoImage} />
             </Styled.PromotionContent>
+
+            <Styled.FilterButtons horizontal>
+                {selectedFilter ? (
+                    <ButtonCarousell
+                        title="All"
+                        onPress={handleClickFilter}
+                        selected_item
+                    />
+                ) : (
+                    <ButtonCarousell title="All" onPress={handleClickFilter} />
+                )}
+
+                <ButtonCarousell title="Espresso" />
+                <ButtonCarousell title="Romano" />
+                <ButtonCarousell title="Latte" />
+            </Styled.FilterButtons>
         </Styled.Container>
     );
 };

@@ -73,3 +73,8 @@ export const PromoImage = styled.Image`
     width: 100%;
     margin-top: 15px;
 `;
+
+export const FilterButtons = styled.ScrollView`
+    width: 100%;
+    margin-top: 15px;
+`;
