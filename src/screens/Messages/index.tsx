@@ -2,12 +2,12 @@ import React from 'react';
 
 import * as Styled from './styles';
 
-const MyOrders: React.FC = () => {
+const Messages: React.FC = () => {
     return (
         <Styled.Container>
-            <Styled.Title>Welcome ASV Studio (MY ORDERS)</Styled.Title>
+            <Styled.Title>Welcome ASV Studio (SHOPPING CART)</Styled.Title>
         </Styled.Container>
     );
 };
 
-export default MyOrders;
+export default Messages;
