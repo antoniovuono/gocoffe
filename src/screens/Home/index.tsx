@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 import Toast from 'react-native-toast-message';
 import PromoImage from '../../assets/images/banner.png';
 import ButtonCarousell from '../../components/ButtonCarousell';
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
         const filteredByDetail = (element: IProducts) => {
             return element.type === searchValue;
         };
+
         const searchResult = products.filter(filteredByDetail);
 
         if (searchResult.length >= 1) {
@@ -27,6 +29,7 @@ const Home: React.FC = () => {
                 text2: 'Search performed successfully.',
             });
             setProducts(searchResult);
+            setSearchValue('');
         } else {
             Toast.show({
                 type: 'error',
@@ -151,12 +154,14 @@ const Home: React.FC = () => {
             </Styled.Header>
 
             <Styled.SearchSection>
-                <Search
-                    placeholder="Find your coffee"
-                    button_title="Search"
-                    input_value={setSearchValue}
-                    onPress={handleSearchByProducts}
-                />
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <Search
+                        placeholder="Find your coffee"
+                        button_title="Search"
+                        input_value={setSearchValue}
+                        onPress={handleSearchByProducts}
+                    />
+                </TouchableWithoutFeedback>
             </Styled.SearchSection>
 
             <Styled.PromotionContent>

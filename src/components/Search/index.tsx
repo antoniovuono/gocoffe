@@ -8,7 +8,7 @@ interface ISearch extends RectButtonProps {
     placeholder: string;
     button_title: string;
     // eslint-disable-next-line no-unused-vars
-    input_value: ((text: string) => void) | undefined;
+    input_value?: ((text: string) => void) | undefined;
 }
 
 const Search: React.FC<ISearch> = ({
