@@ -24,14 +24,14 @@ const Home: React.FC = () => {
             Toast.show({
                 type: 'success',
                 text1: 'Sucess',
-                text2: 'search performed successfully.',
+                text2: 'Search performed successfully.',
             });
             setProducts(searchResult);
         } else {
             Toast.show({
                 type: 'error',
                 text1: 'Opps!',
-                text2: 'No products found',
+                text2: 'No products found...',
             });
         }
     };

@@ -93,8 +93,8 @@
         "L"
       ],
       "price_small": 2.3,
-      "price_medium": 3,
-      "price_large": 5
+      "price_medium": 3.30,
+      "price_large": 5.50
     },
     {
       "id": "7278861f-c75f-42b0-b2ac-79ea84171cc8",
@@ -109,8 +109,8 @@
         "L"
       ],
       "price_small": 3.3,
-      "price_medium": 4,
-      "price_large": 6
+      "price_medium": 4.30,
+      "price_large": 6.75
     },
     {
       "id": "62ae0096-3c89-44df-8762-0189452a0155",
@@ -125,8 +125,8 @@
         "L"
       ],
       "price_small": 2.3,
-      "price_medium": 3,
-      "price_large": 5
+      "price_medium": 3.33,
+      "price_large": 5.30
     }
   ],
   "cart": [],
