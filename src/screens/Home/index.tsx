@@ -10,13 +10,18 @@ import { IProducts } from '../../interfaces/IProducts';
 
 const Home: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
-    const [selectedAll, setSelectedAll] = useState(false);
     const [loading, setLoading] = useState(false);
-
     const { getProductsDetails } = useProducts();
 
-    const handleClickAllFilter = () => {
-        setSelectedAll(!selectedAll);
+    const handleClickEspresso = () => {
+        setLoading(true);
+        const filterByEspresso = (element: IProducts) => {
+            return element.name === 'Espresso';
+        };
+
+        const filterResult = products.filter(filterByEspresso);
+        setProducts(filterResult);
+        setLoading(false);
     };
 
     const fetchProducts = async () => {
@@ -27,8 +32,8 @@ const Home: React.FC = () => {
         } catch (error) {
             Toast.show({
                 type: 'error',
-                text1: 'Error',
-                text2: 'Failed to load products.',
+                text1: 'Opps!',
+                text2: 'Error to load products.',
             });
         } finally {
             setLoading(false);
@@ -85,12 +90,11 @@ const Home: React.FC = () => {
             </Styled.PromotionContent>
 
             <Styled.FilterButtons>
+                <ButtonCarousell title="All" onPress={fetchProducts} />
                 <ButtonCarousell
-                    title="All"
-                    onPress={handleClickAllFilter}
-                    selected_item={selectedAll}
+                    title="Espresso"
+                    onPress={handleClickEspresso}
                 />
-                <ButtonCarousell title="Espresso" />
                 <ButtonCarousell title="Romano" />
                 <ButtonCarousell title="Latte" />
             </Styled.FilterButtons>
