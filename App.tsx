@@ -35,9 +35,8 @@ export default function App() {
                 backgroundColor="transparent"
             />
             <ProductsProvider>
-                <Routes>
-                    <Toast />
-                </Routes>
+                <Routes />
+                <Toast />
             </ProductsProvider>
         </ThemeProvider>
     );
