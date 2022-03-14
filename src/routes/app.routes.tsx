@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from 'styled-components';
+import { Foundation, Feather, MaterialIcons } from '@expo/vector-icons';
 import Home from '../screens/Home';
 import MyOrders from '../screens/MyOrders';
 import ShoppingCart from '../screens/ShoppingCart';
@@ -26,10 +27,50 @@ const routes: React.FC = () => {
                 },
             }}
         >
-            <Screen name="Home" component={Home} />
-            <Screen name="ShoppingCart" component={ShoppingCart} />
-            <Screen name="Messages" component={Messages} />
-            <Screen name="MyOrders" component={MyOrders} />
+            <Screen
+                name="Home"
+                component={Home}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Foundation name="home" size={size} color={color} />
+                    ),
+                }}
+            />
+            <Screen
+                name="ShoppingCart"
+                component={ShoppingCart}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Feather
+                            name="shopping-cart"
+                            size={size}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Screen
+                name="Messages"
+                component={Messages}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialIcons name="email" size={size} color={color} />
+                    ),
+                }}
+            />
+            <Screen
+                name="MyOrders"
+                component={MyOrders}
+                options={{
+                    tabBarIcon: ({ size, color }) => (
+                        <MaterialIcons
+                            name="dashboard"
+                            size={size}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
         </Navigator>
     );
 };
