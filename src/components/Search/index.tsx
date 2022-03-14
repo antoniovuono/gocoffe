@@ -7,9 +7,16 @@ import * as Styled from './styles';
 interface ISearch extends RectButtonProps {
     placeholder: string;
     button_title: string;
+    // eslint-disable-next-line no-unused-vars
+    input_value: ((text: string) => void) | undefined;
 }
 
-const Search: React.FC<ISearch> = ({ placeholder, button_title, ...rest }) => {
+const Search: React.FC<ISearch> = ({
+    placeholder,
+    button_title,
+    input_value,
+    ...rest
+}) => {
     const theme = useTheme();
     return (
         <Styled.Container>
@@ -21,6 +28,7 @@ const Search: React.FC<ISearch> = ({ placeholder, button_title, ...rest }) => {
                     placeholderTextColor={theme.COLORS.secondary_title}
                     numberOfLines={1}
                     maxLength={24}
+                    onChangeText={input_value}
                 />
             </Styled.InputContent>
 

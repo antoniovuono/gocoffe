@@ -10,18 +10,30 @@ import { IProducts } from '../../interfaces/IProducts';
 
 const Home: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
+    const [searchValue, setSearchValue] = useState('');
     const [loading, setLoading] = useState(false);
     const { getProductsDetails } = useProducts();
 
-    const handleClickEspresso = () => {
-        setLoading(true);
-        const filterByEspresso = (element: IProducts) => {
-            return element.name === 'Espresso';
+    const handleSearchByProducts = () => {
+        const filteredByDetail = (element: IProducts) => {
+            return element.type === searchValue;
         };
+        const searchResult = products.filter(filteredByDetail);
 
-        const filterResult = products.filter(filterByEspresso);
-        setProducts(filterResult);
-        setLoading(false);
+        if (searchResult.length >= 1) {
+            Toast.show({
+                type: 'success',
+                text1: 'Sucess',
+                text2: 'search performed successfully.',
+            });
+            setProducts(searchResult);
+        } else {
+            Toast.show({
+                type: 'error',
+                text1: 'Opps!',
+                text2: 'No products found',
+            });
+        }
     };
 
     const fetchProducts = async () => {
@@ -29,6 +41,29 @@ const Home: React.FC = () => {
         try {
             const response = await getProductsDetails();
             setProducts(response);
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Opps!',
+                text2: 'Error to load products.',
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleSearchByEspresso = async () => {
+        setLoading(true);
+        try {
+            const response = await getProductsDetails();
+
+            const filterByEspresso = (element: IProducts) => {
+                return element.name === 'Espresso';
+            };
+
+            const filteredByEspresso = response.filter(filterByEspresso);
+
+            setProducts(filteredByEspresso);
         } catch (error) {
             Toast.show({
                 type: 'error',
@@ -73,13 +108,8 @@ const Home: React.FC = () => {
                 <Search
                     placeholder="Find your coffee"
                     button_title="Search"
-                    onPress={() => {
-                        Toast.show({
-                            type: 'success',
-                            text1: 'Sucesso',
-                            text2: 'pesquisa feita com sucesso',
-                        });
-                    }}
+                    input_value={setSearchValue}
+                    onPress={handleSearchByProducts}
                 />
             </Styled.SearchSection>
 
@@ -93,10 +123,10 @@ const Home: React.FC = () => {
                 <ButtonCarousell title="All" onPress={fetchProducts} />
                 <ButtonCarousell
                     title="Espresso"
-                    onPress={handleClickEspresso}
+                    onPress={handleSearchByEspresso}
                 />
-                <ButtonCarousell title="Romano" />
-                <ButtonCarousell title="Latte" />
+                <ButtonCarousell title="Cappuccino" />
+                <ButtonCarousell title="American" />
             </Styled.FilterButtons>
 
             <Styled.ProductsListContent>

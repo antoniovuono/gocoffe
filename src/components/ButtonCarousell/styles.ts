@@ -4,7 +4,6 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 export const ButtonProductType = styled(RectButton)<{ selected?: boolean }>`
     padding: 10px 20px;
-    margin-left: 10px;
     height: 40px;
 
     ${({ selected }) =>
