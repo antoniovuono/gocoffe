@@ -4,7 +4,6 @@ import Toast from 'react-native-toast-message';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import { StatusBar } from 'expo-status-bar';
-
 import {
     useFonts,
     Poppins_400Regular,
@@ -12,9 +11,8 @@ import {
     Poppins_600SemiBold,
     Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
-
+import Routes from './src/routes';
 import theme from './src/theme';
-import Home from './src/screens/Home';
 import { ProductsProvider } from './src/hooks/useProducts';
 
 export default function App() {
@@ -30,19 +28,17 @@ export default function App() {
     }
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <StatusBar
                 translucent
                 style="light"
                 backgroundColor="transparent"
             />
-
-            <ThemeProvider theme={theme}>
-                <ProductsProvider>
-                    <Home />
+            <ProductsProvider>
+                <Routes>
                     <Toast />
-                </ProductsProvider>
-            </ThemeProvider>
-        </>
+                </Routes>
+            </ProductsProvider>
+        </ThemeProvider>
     );
 }
