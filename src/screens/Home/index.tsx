@@ -75,6 +75,52 @@ const Home: React.FC = () => {
         }
     };
 
+    const handleSearchByCappuccino = async () => {
+        setLoading(true);
+        try {
+            const response = await getProductsDetails();
+
+            const filterByCappuccino = (element: IProducts) => {
+                return element.name === 'Cappuccino';
+            };
+
+            const filteredByCappuccino = response.filter(filterByCappuccino);
+
+            setProducts(filteredByCappuccino);
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Opps!',
+                text2: 'Error to load products.',
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleSearchByAmerican = async () => {
+        setLoading(true);
+        try {
+            const response = await getProductsDetails();
+
+            const filterByAmerican = (element: IProducts) => {
+                return element.name === 'American';
+            };
+
+            const filteredByAmerican = response.filter(filterByAmerican);
+
+            setProducts(filteredByAmerican);
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Opps!',
+                text2: 'Error to load products.',
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -125,8 +171,14 @@ const Home: React.FC = () => {
                     title="Espresso"
                     onPress={handleSearchByEspresso}
                 />
-                <ButtonCarousell title="Cappuccino" />
-                <ButtonCarousell title="American" />
+                <ButtonCarousell
+                    title="Cappuccino"
+                    onPress={handleSearchByCappuccino}
+                />
+                <ButtonCarousell
+                    title="American"
+                    onPress={handleSearchByAmerican}
+                />
             </Styled.FilterButtons>
 
             <Styled.ProductsListContent>
