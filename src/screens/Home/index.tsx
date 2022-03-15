@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import PromoImage from '../../assets/images/banner.png';
 import ButtonCarousell from '../../components/ButtonCarousell';
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     const [loading, setLoading] = useState(false);
 
     const { getProductsDetails } = useProducts();
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
 
     const handleSearchByProducts = () => {
         const filteredByDetail = (element: IProducts) => {
@@ -127,9 +127,9 @@ const Home: React.FC = () => {
         }
     };
 
-    const handleGoToProductPage = () => {
-        navigation.navigate('ProductPage');
-    };
+    // const handleGoToProductPage = () => {
+    //     navigation.navigate('ProductPage');
+    // };
 
     useEffect(() => {
         fetchProducts();
@@ -153,7 +153,7 @@ const Home: React.FC = () => {
                     />
                     <Styled.SignOutButton
                         hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}
-                        onPress={handleGoToProductPage}
+                        // onPress={}
                     >
                         <Styled.SignOut>Sign out</Styled.SignOut>
                     </Styled.SignOutButton>
