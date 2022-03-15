@@ -71,7 +71,22 @@ const Product: React.FC = () => {
                         </Styled.RatingContent>
 
                         <Styled.QuantityContent>
-                            <NumericInput totalHeight={30} totalWidth={80} />
+                            <NumericInput
+                                totalHeight={35}
+                                totalWidth={80}
+                                rounded
+                                textColor={theme.COLORS.secondary_title}
+                                rightButtonBackgroundColor={
+                                    theme.COLORS.secondary_background
+                                }
+                                leftButtonBackgroundColor={
+                                    theme.COLORS.secondary_background
+                                }
+                                borderColor={theme.COLORS.secondary_title}
+                                iconStyle={{
+                                    color: theme.COLORS.secondary_title,
+                                }}
+                            />
                         </Styled.QuantityContent>
                     </Styled.RatingAndQuantity>
                 </Styled.ProductDetails>
