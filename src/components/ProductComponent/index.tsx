@@ -1,9 +1,10 @@
 import React from 'react';
+import { RectButtonProps } from 'react-native-gesture-handler';
 import StarIcon from '../../assets/icons/star.svg';
 import AddIcon from '../../assets/icons/plus.svg';
 import * as Styled from './styles';
 
-interface IProductComponent {
+interface IProductComponent extends RectButtonProps {
     product_image: string;
     product_review: number;
     product_name: string;
@@ -18,11 +19,12 @@ const ProductComponent: React.FC<IProductComponent> = ({
     product_name,
     product_detail,
     product_price,
+    onAddToCart,
     ...rest
 }) => {
     return (
         <Styled.Container>
-            <Styled.ImageContent>
+            <Styled.ImageContent {...rest}>
                 <Styled.ProductImage
                     source={{
                         uri: product_image,
@@ -44,7 +46,10 @@ const ProductComponent: React.FC<IProductComponent> = ({
                     {product_price}
                 </Styled.ProductPrice>
 
-                <Styled.AddToCard {...rest}>
+                <Styled.AddToCard
+                    hitSlop={{ left: 20, top: 20, right: 20, bottom: 20 }}
+                    onPress={onAddToCart}
+                >
                     <AddIcon />
                 </Styled.AddToCard>
             </Styled.DetailsContent>

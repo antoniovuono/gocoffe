@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
-// import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import PromoImage from '../../assets/images/banner.png';
 import ButtonCarousell from '../../components/ButtonCarousell';
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     const [loading, setLoading] = useState(false);
 
     const { getProductsDetails } = useProducts();
-    // const navigation = useNavigation();
+    const navigation = useNavigation();
 
     const handleSearchByProducts = () => {
         const filteredByDetail = (element: IProducts) => {
@@ -127,9 +127,17 @@ const Home: React.FC = () => {
         }
     };
 
-    // const handleGoToProductPage = () => {
-    //     navigation.navigate('ProductPage');
-    // };
+    const handleAddToCart = async () => {
+        Toast.show({
+            type: 'success',
+            text1: 'Sucesso!',
+            text2: 'Product added to the cart',
+        });
+    };
+
+    const handleGoToProductPage = () => {
+        navigation.navigate('ProductPage');
+    };
 
     useEffect(() => {
         fetchProducts();
@@ -204,6 +212,7 @@ const Home: React.FC = () => {
                         keyExtractor={item => item.id}
                         renderItem={({ item }) => (
                             <ProductComponent
+                                onPress={handleGoToProductPage}
                                 product_image={
                                     item.photo ||
                                     'https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png'
@@ -212,7 +221,7 @@ const Home: React.FC = () => {
                                 product_name={item.name || 'Coffee'}
                                 product_detail={item.type || 'Traditional'}
                                 product_price={item.price_large}
-                                onAddToCart={() => {}}
+                                onAddToCart={handleAddToCart}
                             />
                         )}
                     />

@@ -1,5 +1,6 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
     background-color: ${({ theme }) => theme.COLORS.secondary_background};
@@ -9,7 +10,7 @@ export const Container = styled.View`
     margin: 5px;
 `;
 
-export const ImageContent = styled.View`
+export const ImageContent = styled(RectButton)`
     align-items: center;
     justify-content: center;
     padding: 10px;
