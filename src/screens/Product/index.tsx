@@ -5,6 +5,7 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
+import SizeButtons from '../../components/SizeButtons';
 
 interface IQuantityInput {
     value: number;
@@ -103,6 +104,33 @@ const Product: React.FC = () => {
                         </Styled.QuantityContent>
                     </Styled.RatingAndQuantity>
                 </Styled.ProductDetails>
+
+                <Styled.DescriptionContent>
+                    <Styled.DescriptionTitle>
+                        Description
+                    </Styled.DescriptionTitle>
+
+                    <Styled.Description>
+                        Espresso is generally denser than coffee brewed by other
+                        methods, having a higher concentration of suspended and
+                        dissolved solids; it generally has a creamy foam on top
+                        known as crema. Espresso is the base for a number of
+                        other coffee drinks, such as latte, cappuccino,
+                        macchiato, mocha, and americano.
+                    </Styled.Description>
+                </Styled.DescriptionContent>
+
+                <Styled.SizeContent>
+                    <Styled.DescriptionTitle>
+                        Choose Size
+                    </Styled.DescriptionTitle>
+
+                    <Styled.ButtonsContent>
+                        <SizeButtons />
+                        <SizeButtons />
+                        <SizeButtons />
+                    </Styled.ButtonsContent>
+                </Styled.SizeContent>
             </Styled.ProductPageContent>
         </Styled.Container>
     );

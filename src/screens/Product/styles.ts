@@ -107,3 +107,35 @@ export const RatingText = styled.Text`
 `;
 
 export const QuantityContent = styled.View``;
+
+export const DescriptionContent = styled.View`
+    margin-top: ${RFValue(15)}px;
+    padding: 0 10px;
+`;
+
+export const DescriptionTitle = styled.Text`
+    font-family: ${({ theme }) => theme.FONTS.medium};
+    font-size: ${RFValue(12)}px;
+    color: ${({ theme }) => theme.COLORS.primary_title};
+`;
+
+export const Description = styled.Text`
+    font-family: ${({ theme }) => theme.FONTS.regular};
+    font-size: ${RFValue(10)}px;
+    color: ${({ theme }) => theme.COLORS.primary_title};
+    margin-top: ${RFValue(8)}px;
+    text-align: justify;
+`;
+
+export const SizeContent = styled.View`
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+`;
+
+export const ButtonsContent = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+`;
