@@ -13,8 +13,6 @@ interface IQuantityInput {
 const Product: React.FC = () => {
     const [quantity, setQuantity] = useState<IQuantityInput | any>(0);
 
-    console.log('retorno:', quantity);
-
     const theme = useTheme();
     const navigation = useNavigation();
 
