@@ -130,5 +130,6 @@
     }
   ],
   "cart": [],
-  "orders": []
+  "orders": [],
+  "favorites": []
 }
