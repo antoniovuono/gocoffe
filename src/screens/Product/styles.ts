@@ -86,4 +86,24 @@ export const Price = styled.Text<{ orange?: boolean }>`
         `};
 `;
 
-export const RatingAndQuantity = styled.View``;
+export const RatingAndQuantity = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+`;
+
+export const RatingContent = styled.View`
+    flex-direction: row;
+    align-items: center;
+    margin-top: ${RFValue(5)}px;
+`;
+
+export const RatingText = styled.Text`
+    font-family: ${({ theme }) => theme.FONTS.medium};
+    color: ${({ theme }) => theme.COLORS.primary_title};
+    font-size: ${RFValue(12)}px;
+    margin-left: 5px;
+`;
+
+export const QuantityContent = styled.View``;

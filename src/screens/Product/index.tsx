@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import NumericInput from 'react-native-numeric-input';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
+import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
 
 const Product: React.FC = () => {
@@ -61,6 +63,17 @@ const Product: React.FC = () => {
                             </Styled.Price>
                         </Styled.PriceContent>
                     </Styled.DetailsAndPriceContent>
+
+                    <Styled.RatingAndQuantity>
+                        <Styled.RatingContent>
+                            <StarIcon />
+                            <Styled.RatingText>4.4</Styled.RatingText>
+                        </Styled.RatingContent>
+
+                        <Styled.QuantityContent>
+                            <NumericInput totalHeight={30} totalWidth={80} />
+                        </Styled.QuantityContent>
+                    </Styled.RatingAndQuantity>
                 </Styled.ProductDetails>
             </Styled.ProductPageContent>
         </Styled.Container>
