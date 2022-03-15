@@ -45,6 +45,23 @@ const Product: React.FC = () => {
                         uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png',
                     }}
                 />
+
+                <Styled.ProductDetails>
+                    <Styled.DetailsAndPriceContent>
+                        <Styled.ProductTitleContent>
+                            <Styled.ProductName>Cappuccino</Styled.ProductName>
+                            <Styled.ProductType>
+                                With chocolate
+                            </Styled.ProductType>
+                        </Styled.ProductTitleContent>
+
+                        <Styled.PriceContent>
+                            <Styled.Price>
+                                <Styled.Price orange>$ </Styled.Price>5.50
+                            </Styled.Price>
+                        </Styled.PriceContent>
+                    </Styled.DetailsAndPriceContent>
+                </Styled.ProductDetails>
             </Styled.ProductPageContent>
         </Styled.Container>
     );
