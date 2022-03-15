@@ -39,11 +39,13 @@ const Product: React.FC = () => {
                 </Styled.ButtonFavoriteProduct>
             </Styled.Header>
 
-            <Styled.ProductImage
-                source={{
-                    uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png',
-                }}
-            />
+            <Styled.ProductPageContent>
+                <Styled.ProductImage
+                    source={{
+                        uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png',
+                    }}
+                />
+            </Styled.ProductPageContent>
         </Styled.Container>
     );
 };

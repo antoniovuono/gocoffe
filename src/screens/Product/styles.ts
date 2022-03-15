@@ -27,9 +27,14 @@ export const HeaderTitle = styled.Text`
 
 export const ButtonFavoriteProduct = styled.TouchableOpacity``;
 
+export const ProductPageContent = styled.ScrollView`
+    width: 100%;
+    flex: 1;
+`;
+
 export const ProductImage = styled.Image`
     width: 100%;
-    height: 40%;
+    height: 390px;
     border-radius: ${RFValue(20)}px;
     margin-top: ${RFValue(20)}px;
 `;
