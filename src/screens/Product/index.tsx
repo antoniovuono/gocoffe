@@ -13,12 +13,33 @@ interface IQuantityInput {
 
 const Product: React.FC = () => {
     const [quantity, setQuantity] = useState<IQuantityInput | any>(0);
+    const [selectedButtonS, setSelectedButtonS] = useState(false);
+    const [selectedButtonM, setSelectedButtonM] = useState(false);
+    const [selectedButtonL, setSelectedButtonL] = useState(false);
 
     const theme = useTheme();
     const navigation = useNavigation();
 
     const handleGoBack = () => {
         navigation.goBack();
+    };
+
+    const handleClickS = () => {
+        setSelectedButtonM(false);
+        setSelectedButtonL(false);
+        setSelectedButtonS(!selectedButtonS);
+    };
+
+    const handleClickM = () => {
+        setSelectedButtonS(false);
+        setSelectedButtonL(false);
+        setSelectedButtonM(!selectedButtonM);
+    };
+
+    const handleClickL = () => {
+        setSelectedButtonS(false);
+        setSelectedButtonM(false);
+        setSelectedButtonL(!selectedButtonL);
     };
 
     return (
@@ -126,9 +147,21 @@ const Product: React.FC = () => {
                     </Styled.DescriptionTitle>
 
                     <Styled.ButtonsContent>
-                        <SizeButtons />
-                        <SizeButtons />
-                        <SizeButtons />
+                        <SizeButtons
+                            title="S"
+                            selected_button={selectedButtonS}
+                            onPress={handleClickS}
+                        />
+                        <SizeButtons
+                            title="M"
+                            selected_button={selectedButtonM}
+                            onPress={handleClickM}
+                        />
+                        <SizeButtons
+                            title="G"
+                            selected_button={selectedButtonL}
+                            onPress={handleClickL}
+                        />
                     </Styled.ButtonsContent>
                 </Styled.SizeContent>
             </Styled.ProductPageContent>

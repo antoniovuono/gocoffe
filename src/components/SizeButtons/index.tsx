@@ -2,10 +2,20 @@ import React from 'react';
 
 import * as Styled from './styles';
 
-const SizeButtons: React.FC = () => {
+interface IButton {
+    title: string;
+    selected_button: boolean;
+    onPress: () => void;
+}
+
+const SizeButtons: React.FC<IButton> = ({
+    title,
+    selected_button,
+    ...rest
+}) => {
     return (
-        <Styled.SizeButton>
-            <Styled.SizeButtonTitle>S</Styled.SizeButtonTitle>
+        <Styled.SizeButton selected={selected_button} {...rest}>
+            <Styled.SizeButtonTitle>{title}</Styled.SizeButtonTitle>
         </Styled.SizeButton>
     );
 };
