@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import NumericInput from 'react-native-numeric-input';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
@@ -6,7 +6,15 @@ import { useTheme } from 'styled-components';
 import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
 
+interface IQuantityInput {
+    value: number;
+}
+
 const Product: React.FC = () => {
+    const [quantity, setQuantity] = useState<IQuantityInput | any>(0);
+
+    console.log('retorno:', quantity);
+
     const theme = useTheme();
     const navigation = useNavigation();
 
@@ -72,10 +80,17 @@ const Product: React.FC = () => {
 
                         <Styled.QuantityContent>
                             <NumericInput
+                                // eslint-disable-next-line react/destructuring-assignment
+                                initValue={quantity < 0 ? 0 : quantity}
+                                value={quantity.value}
+                                onChange={value =>
+                                    setQuantity(value < 0 ? 0 : value)
+                                }
+                                valueType="integer"
                                 totalHeight={35}
                                 totalWidth={80}
                                 rounded
-                                textColor={theme.COLORS.secondary_title}
+                                textColor={theme.COLORS.secondary}
                                 rightButtonBackgroundColor={
                                     theme.COLORS.secondary_background
                                 }
@@ -84,7 +99,7 @@ const Product: React.FC = () => {
                                 }
                                 borderColor={theme.COLORS.secondary_title}
                                 iconStyle={{
-                                    color: theme.COLORS.secondary_title,
+                                    color: theme.COLORS.secondary,
                                 }}
                             />
                         </Styled.QuantityContent>
