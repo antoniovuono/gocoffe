@@ -6,6 +6,7 @@ interface IButton {
     title: string;
     selected_button: boolean;
     onPress: () => void;
+    disabled?: boolean;
 }
 
 const SizeButtons: React.FC<IButton> = ({

@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import NumericInput from 'react-native-numeric-input';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
 import SizeButtons from '../../components/SizeButtons';
+import { IProducts } from '../../interfaces/IProducts';
 
+interface IProductsParmas {
+    products_data: IProducts;
+}
 interface IQuantityInput {
     value: number;
 }
@@ -16,30 +20,52 @@ const Product: React.FC = () => {
     const [selectedButtonS, setSelectedButtonS] = useState(false);
     const [selectedButtonM, setSelectedButtonM] = useState(false);
     const [selectedButtonL, setSelectedButtonL] = useState(false);
+    const [selectedSize, setSelectedSize] = useState('');
 
     const theme = useTheme();
     const navigation = useNavigation();
+    const route = useRoute();
+    const { products_data } = route.params as IProductsParmas;
 
     const handleGoBack = () => {
         navigation.goBack();
     };
 
     const handleClickS = () => {
+        setSelectedSize('S');
         setSelectedButtonM(false);
         setSelectedButtonL(false);
         setSelectedButtonS(!selectedButtonS);
     };
 
     const handleClickM = () => {
+        setSelectedSize('M');
         setSelectedButtonS(false);
         setSelectedButtonL(false);
         setSelectedButtonM(!selectedButtonM);
     };
 
     const handleClickL = () => {
+        setSelectedSize('L');
         setSelectedButtonS(false);
         setSelectedButtonM(false);
         setSelectedButtonL(!selectedButtonL);
+    };
+
+    const priceCalculator = () => {
+        if (selectedSize === 'S') {
+            return products_data.price_small;
+        }
+        if (selectedSize === 'M') {
+            return products_data.price_medium;
+        }
+        return products_data.price_large;
+    };
+
+    const checkoutPriceCalculator = () => {
+        const totalPrice = quantity * priceCalculator();
+
+        return totalPrice.toFixed(2);
     };
 
     return (
@@ -56,7 +82,7 @@ const Product: React.FC = () => {
                     />
                 </Styled.ButtonGoBack>
 
-                <Styled.HeaderTitle>Cappuccino</Styled.HeaderTitle>
+                <Styled.HeaderTitle>{products_data.name}</Styled.HeaderTitle>
 
                 <Styled.ButtonFavoriteProduct
                     hitSlop={{ left: 15, top: 15, right: 15, bottom: 15 }}
@@ -69,25 +95,28 @@ const Product: React.FC = () => {
                 </Styled.ButtonFavoriteProduct>
             </Styled.Header>
 
-            <Styled.ProductPageContent>
+            <Styled.ProductPageContent showsVerticalScrollIndicator={false}>
                 <Styled.ProductImage
                     source={{
-                        uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png',
+                        uri: products_data.photo,
                     }}
                 />
 
                 <Styled.ProductDetails>
                     <Styled.DetailsAndPriceContent>
                         <Styled.ProductTitleContent>
-                            <Styled.ProductName>Cappuccino</Styled.ProductName>
+                            <Styled.ProductName>
+                                {products_data.name}
+                            </Styled.ProductName>
                             <Styled.ProductType>
-                                With chocolate
+                                {products_data.type}
                             </Styled.ProductType>
                         </Styled.ProductTitleContent>
 
                         <Styled.PriceContent>
                             <Styled.Price>
-                                <Styled.Price orange>$ </Styled.Price>5.50
+                                <Styled.Price orange>$ </Styled.Price>
+                                {priceCalculator()}
                             </Styled.Price>
                         </Styled.PriceContent>
                     </Styled.DetailsAndPriceContent>
@@ -95,7 +124,9 @@ const Product: React.FC = () => {
                     <Styled.RatingAndQuantity>
                         <Styled.RatingContent>
                             <StarIcon />
-                            <Styled.RatingText>4.4</Styled.RatingText>
+                            <Styled.RatingText>
+                                {products_data.rating}
+                            </Styled.RatingText>
                         </Styled.RatingContent>
 
                         <Styled.QuantityContent>
@@ -132,12 +163,7 @@ const Product: React.FC = () => {
                     </Styled.DescriptionTitle>
 
                     <Styled.Description>
-                        Espresso is generally denser than coffee brewed by other
-                        methods, having a higher concentration of suspended and
-                        dissolved solids; it generally has a creamy foam on top
-                        known as crema. Espresso is the base for a number of
-                        other coffee drinks, such as latte, cappuccino,
-                        macchiato, mocha, and americano.
+                        {products_data.description}
                     </Styled.Description>
                 </Styled.DescriptionContent>
 
@@ -156,9 +182,10 @@ const Product: React.FC = () => {
                             title="M"
                             selected_button={selectedButtonM}
                             onPress={handleClickM}
+                            disabled={false}
                         />
                         <SizeButtons
-                            title="G"
+                            title="L"
                             selected_button={selectedButtonL}
                             onPress={handleClickL}
                         />
@@ -170,7 +197,7 @@ const Product: React.FC = () => {
                         <Styled.PriceLabel>Total price</Styled.PriceLabel>
                         <Styled.TotalPrice>
                             <Styled.TotalPrice orangelabel>$</Styled.TotalPrice>
-                            10.12
+                            {checkoutPriceCalculator()}
                         </Styled.TotalPrice>
                     </Styled.OrderPrice>
 
