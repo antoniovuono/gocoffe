@@ -1,4 +1,7 @@
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import {
+    getBottomSpace,
+    getStatusBarHeight,
+} from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
 
@@ -137,5 +140,55 @@ export const ButtonsContent = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: ${RFValue(10)}px;
+`;
+
+export const CheckoutSection = styled.View`
+    padding: 20px;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: ${getBottomSpace() + 10}px;
+`;
+
+export const OrderPrice = styled.View`
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const PriceLabel = styled.Text`
+    color: ${({ theme }) => theme.COLORS.primary_title};
+    font-size: ${RFValue(10)}px;
+    font-family: ${({ theme }) => theme.FONTS.regular};
+`;
+
+export const TotalPrice = styled.Text<{ orangelabel?: boolean }>`
+    color: ${({ theme }) => theme.COLORS.primary_title};
+    font-size: ${RFValue(20)}px;
+    font-family: ${({ theme }) => theme.FONTS.medium};
+
+    ${({ orangelabel }) =>
+        orangelabel &&
+        css`
+            color: ${({ theme }) => theme.COLORS.secondary};
+        `}
+`;
+
+export const ButtonSection = styled.View`
+    width: 70%;
+`;
+
+export const CheckoutButton = styled.TouchableOpacity`
+    width: 100%;
+    background-color: ${({ theme }) => theme.COLORS.secondary};
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border-radius: ${RFValue(10)}px;
+`;
+
+export const CheckoutButtonTitle = styled.Text`
+    color: ${({ theme }) => theme.COLORS.primary_title};
+    font-size: ${RFValue(16)}px;
+    font-family: ${({ theme }) => theme.FONTS.medium};
 `;

@@ -164,6 +164,24 @@ const Product: React.FC = () => {
                         />
                     </Styled.ButtonsContent>
                 </Styled.SizeContent>
+
+                <Styled.CheckoutSection>
+                    <Styled.OrderPrice>
+                        <Styled.PriceLabel>Total price</Styled.PriceLabel>
+                        <Styled.TotalPrice>
+                            <Styled.TotalPrice orangelabel>$</Styled.TotalPrice>
+                            10.12
+                        </Styled.TotalPrice>
+                    </Styled.OrderPrice>
+
+                    <Styled.ButtonSection>
+                        <Styled.CheckoutButton>
+                            <Styled.CheckoutButtonTitle>
+                                Add to cart
+                            </Styled.CheckoutButtonTitle>
+                        </Styled.CheckoutButton>
+                    </Styled.ButtonSection>
+                </Styled.CheckoutSection>
             </Styled.ProductPageContent>
         </Styled.Container>
     );
