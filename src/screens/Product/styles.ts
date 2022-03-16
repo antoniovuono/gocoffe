@@ -18,6 +18,7 @@ export const Header = styled.View`
     flex-direction: row;
     margin-top: ${getStatusBarHeight() + 30}px;
     justify-content: space-between;
+    padding: 20px 0;
 `;
 
 export const ButtonGoBack = styled.TouchableOpacity``;

@@ -175,7 +175,7 @@ const Product: React.FC = () => {
                     </Styled.OrderPrice>
 
                     <Styled.ButtonSection>
-                        <Styled.CheckoutButton>
+                        <Styled.CheckoutButton activeOpacity={0.5}>
                             <Styled.CheckoutButtonTitle>
                                 Add to cart
                             </Styled.CheckoutButtonTitle>
