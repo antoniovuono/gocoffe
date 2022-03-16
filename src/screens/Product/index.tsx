@@ -3,10 +3,12 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import NumericInput from 'react-native-numeric-input';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
+import Toast from 'react-native-toast-message';
 import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
 import SizeButtons from '../../components/SizeButtons';
 import { IProducts } from '../../interfaces/IProducts';
+import useProducts from '../../hooks/useProducts';
 
 interface IProductsParmas {
     products_data: IProducts;
@@ -26,6 +28,7 @@ const Product: React.FC = () => {
     const navigation = useNavigation();
     const route = useRoute();
     const { products_data } = route.params as IProductsParmas;
+    const { favoriteProducts } = useProducts();
 
     const handleGoBack = () => {
         navigation.goBack();
@@ -68,6 +71,23 @@ const Product: React.FC = () => {
         return totalPrice.toFixed(2);
     };
 
+    const handleFavoriteProduct = () => {
+        try {
+            favoriteProducts(products_data);
+            Toast.show({
+                type: 'success',
+                text1: 'Success!',
+                text2: 'Product favorited!',
+            });
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Opps!',
+                text2: 'Unable to favorite product!',
+            });
+        }
+    };
+
     return (
         <Styled.Container>
             <Styled.Header>
@@ -86,6 +106,7 @@ const Product: React.FC = () => {
 
                 <Styled.ButtonFavoriteProduct
                     hitSlop={{ left: 15, top: 15, right: 15, bottom: 15 }}
+                    onPress={handleFavoriteProduct}
                 >
                     <MaterialIcons
                         name="favorite-border"

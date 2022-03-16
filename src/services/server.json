@@ -93,8 +93,8 @@
         "L"
       ],
       "price_small": 2.3,
-      "price_medium": 3.30,
-      "price_large": 5.50
+      "price_medium": 3.3,
+      "price_large": 5.5
     },
     {
       "id": "7278861f-c75f-42b0-b2ac-79ea84171cc8",
@@ -109,7 +109,7 @@
         "L"
       ],
       "price_small": 3.3,
-      "price_medium": 4.30,
+      "price_medium": 4.3,
       "price_large": 6.75
     },
     {
@@ -126,10 +126,49 @@
       ],
       "price_small": 2.3,
       "price_medium": 3.33,
-      "price_large": 5.30
+      "price_large": 5.3
     }
   ],
   "cart": [],
   "orders": [],
-  "favorites": []
+  "favorites": [
+    {
+      "product": {
+        "id": "e2d9a040-332e-4808-bcfa-b5b90ac48e6c",
+        "name": "Cappuccino",
+        "type": "With cream",
+        "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+        "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+        "rating": 4.5,
+        "size": [
+          "S",
+          "M",
+          "L"
+        ],
+        "price_small": 1.4,
+        "price_medium": 2.4,
+        "price_large": 4.3
+      },
+      "id": 1
+    },
+    {
+      "product": {
+        "id": "e2d9a040-332e-4808-bcfa-b5b90ac48e6c",
+        "name": "Cappuccino",
+        "type": "With cream",
+        "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+        "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+        "rating": 4.5,
+        "size": [
+          "S",
+          "M",
+          "L"
+        ],
+        "price_small": 1.4,
+        "price_medium": 2.4,
+        "price_large": 4.3
+      },
+      "id": 2
+    }
+  ]
 }

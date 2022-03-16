@@ -1,5 +1,4 @@
 import React from 'react';
-
 import * as Styled from './styles';
 
 interface IButton {
