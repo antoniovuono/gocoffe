@@ -23,12 +23,13 @@ const Product: React.FC = () => {
     const [selectedButtonM, setSelectedButtonM] = useState(false);
     const [selectedButtonL, setSelectedButtonL] = useState(false);
     const [selectedSize, setSelectedSize] = useState('');
+    const [favorites, setFavorites] = useState<IProducts[]>([]);
 
     const theme = useTheme();
     const navigation = useNavigation();
     const route = useRoute();
     const { products_data } = route.params as IProductsParmas;
-    const { favoriteProducts } = useProducts();
+    const { favoriteProducts, getFavoritedProducts } = useProducts();
 
     const handleGoBack = () => {
         navigation.goBack();
@@ -71,14 +72,59 @@ const Product: React.FC = () => {
         return totalPrice.toFixed(2);
     };
 
+    const getFavoritesProducts = async () => {
+        try {
+            const response = await getFavoritedProducts();
+            setFavorites(response);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     const handleFavoriteProduct = () => {
         try {
-            favoriteProducts(products_data);
-            Toast.show({
-                type: 'success',
-                text1: 'Success!',
-                text2: 'Product favorited!',
+            const productFavorited = favorites.find(element => {
+                return element.id === products_data.id;
             });
+
+            if (productFavorited) {
+                Toast.show({
+                    type: 'error',
+                    text1: 'Opps!',
+                    text2: 'Product already favorited!',
+                });
+            } else {
+                const {
+                    id,
+                    name,
+                    description,
+                    photo,
+                    type,
+                    rating,
+                    price_small,
+                    price_medium,
+                    price_large,
+                    size,
+                } = products_data;
+
+                favoriteProducts(
+                    id,
+                    name,
+                    description,
+                    photo,
+                    type,
+                    rating,
+                    price_small,
+                    price_medium,
+                    price_large,
+                    size,
+                );
+                Toast.show({
+                    type: 'success',
+                    text1: 'Success!',
+                    text2: 'Product favorited!',
+                });
+            }
         } catch (error) {
             Toast.show({
                 type: 'error',
@@ -87,6 +133,10 @@ const Product: React.FC = () => {
             });
         }
     };
+
+    useEffect(() => {
+        getFavoritesProducts();
+    }, [favoriteProducts]);
 
     return (
         <Styled.Container>
