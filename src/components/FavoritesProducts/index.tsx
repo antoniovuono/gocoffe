@@ -3,33 +3,42 @@ import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import * as Styled from './styles';
 
-export function FavoritesProducts() {
+interface IFavoriteComponent {
+    photo: string;
+    title: string;
+    type: string;
+    description: string;
+    onPress: () => void;
+}
+
+const FavoritesProducts: React.FC<IFavoriteComponent> = ({
+    photo,
+    title,
+    type,
+    description,
+    ...rest
+}) => {
     const theme = useTheme();
     return (
         <Styled.Container>
             <Styled.ProductPhotoContent>
                 <Styled.ProductPhoto
                     source={{
-                        uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png',
+                        uri: photo,
                     }}
                 />
             </Styled.ProductPhotoContent>
 
             <Styled.DetailsContent>
-                <Styled.ProductTitle>Cappuccino</Styled.ProductTitle>
-                <Styled.ProductType>With chocolate</Styled.ProductType>
+                <Styled.ProductTitle>{title}</Styled.ProductTitle>
+                <Styled.ProductType>{type}</Styled.ProductType>
                 <Styled.Description numberOfLines={3}>
-                    Espresso is generally denser than coffee brewed by other
-                    methods, having a higher concentration of suspended and
-                    dissolved solids; it generally has a creamy foam on top
-                    known as crema. Espresso is the base for a number of other
-                    coffee drinks, such as latte, cappuccino, macchiato, mocha,
-                    and americano.
+                    {description}
                 </Styled.Description>
             </Styled.DetailsContent>
 
             <Styled.DeleteButtonContent>
-                <Styled.DeleteButton>
+                <Styled.DeleteButton {...rest}>
                     <AntDesign
                         name="delete"
                         size={24}
@@ -39,4 +48,6 @@ export function FavoritesProducts() {
             </Styled.DeleteButtonContent>
         </Styled.Container>
     );
-}
+};
+
+export default FavoritesProducts;
