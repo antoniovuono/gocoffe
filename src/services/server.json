@@ -147,6 +147,22 @@
         "M",
         "L"
       ]
+    },
+    {
+      "id": "62ae0096-3c89-44df-8762-0189452a0155",
+      "name": "American",
+      "description": "Caffè Americano (also known as Americano or American; Italian pronunciation: [kafˈfɛ ameriˈkaːno]; Spanish: café americano, literally American coffee) is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png",
+      "type": "American",
+      "rating": 4.2,
+      "price_small": 2.3,
+      "price_medium": 3.33,
+      "price_large": 5.3,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ]
     }
   ]
 }

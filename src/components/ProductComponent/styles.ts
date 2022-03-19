@@ -29,8 +29,8 @@ export const ProductReviewContent = styled.View`
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
     position: absolute;
-    bottom: 131px;
-    right: 14px;
+    bottom: ${RFValue(108)}px;
+    right: ${RFValue(11)}px;
 
     flex-direction: row;
     justify-content: center;
