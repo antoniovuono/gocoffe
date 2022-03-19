@@ -58,5 +58,5 @@ export const FavoritedsList = styled(FlatList).attrs(
 export const Loader = styled.ActivityIndicator.attrs({
     size: 'small',
 })`
-    margin-top: ${RFValue(20)}px;
+    margin-top: ${RFValue(240)}px;
 `;

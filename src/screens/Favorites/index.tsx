@@ -10,6 +10,7 @@ import { IProducts } from '../../interfaces/IProducts';
 const Favorites: React.FC = () => {
     const [favoriteds, setFavoriteds] = useState<IProducts[]>([]);
     const [loading, setLoading] = useState(false);
+    const [loader, setLoader] = useState(false);
 
     const theme = useTheme();
     const { getFavoritedProducts, removeFavorite } = useProducts();
@@ -32,6 +33,7 @@ const Favorites: React.FC = () => {
 
     const handleRemoveFavorite = async (id: string) => {
         try {
+            setLoader(true);
             await removeFavorite(id);
         } catch (error) {
             Toast.show({
@@ -39,12 +41,14 @@ const Favorites: React.FC = () => {
                 text1: 'Ops!',
                 text2: 'Error to remove favorites!',
             });
+        } finally {
+            setLoader(false);
         }
     };
 
     useEffect(() => {
         getFavoritedProduct();
-    }, []);
+    }, [loader]);
 
     return (
         <Styled.Container>
@@ -86,6 +90,7 @@ const Favorites: React.FC = () => {
                                 type={item.type}
                                 description={item.description}
                                 onPress={() => handleRemoveFavorite(item.id)}
+                                loading={loader}
                             />
                         )}
                     />

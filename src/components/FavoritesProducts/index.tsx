@@ -8,6 +8,7 @@ interface IFavoriteComponent {
     title: string;
     type: string;
     description: string;
+    loading: boolean;
     onPress: () => void;
 }
 
@@ -16,6 +17,7 @@ const FavoritesProducts: React.FC<IFavoriteComponent> = ({
     title,
     type,
     description,
+    loading,
     ...rest
 }) => {
     const theme = useTheme();
@@ -39,11 +41,15 @@ const FavoritesProducts: React.FC<IFavoriteComponent> = ({
 
             <Styled.DeleteButtonContent>
                 <Styled.DeleteButton {...rest}>
-                    <AntDesign
-                        name="delete"
-                        size={24}
-                        color={theme.COLORS.secondary}
-                    />
+                    {loading ? (
+                        <Styled.Loader />
+                    ) : (
+                        <AntDesign
+                            name="delete"
+                            size={24}
+                            color={theme.COLORS.secondary}
+                        />
+                    )}
                 </Styled.DeleteButton>
             </Styled.DeleteButtonContent>
         </Styled.Container>

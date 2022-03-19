@@ -133,6 +133,22 @@
   "orders": [],
   "favorites": [
     {
+      "id": "0f4f5f2b-8f92-4874-895d-034003cbd189",
+      "name": "Cappuccino",
+      "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
+      "type": "With chocolate",
+      "rating": 4.5,
+      "price_small": 1.75,
+      "price_medium": 2.75,
+      "price_large": 4.5,
+      "size": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
       "id": "7278861f-c75f-42b0-b2ac-79ea84171cc8",
       "name": "Espresso",
       "description": "The espresso romano is made by combining an espresso shot with a lemon slice or lemon juice and a teaspoon of sugar. The slice can be squeezed or dropped into the coffee, and is sometimes candied. It's a versatile drink that can be served hot, cold, or iced – and with or without milk.",
@@ -142,22 +158,6 @@
       "price_small": 3.3,
       "price_medium": 4.3,
       "price_large": 6.75,
-      "size": [
-        "S",
-        "M",
-        "L"
-      ]
-    },
-    {
-      "id": "e2d9a040-332e-4808-bcfa-b5b90ac48e6c",
-      "name": "Cappuccino",
-      "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
-      "type": "With cream",
-      "rating": 4.5,
-      "price_small": 1.4,
-      "price_medium": 2.4,
-      "price_large": 4.3,
       "size": [
         "S",
         "M",
