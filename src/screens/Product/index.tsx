@@ -140,7 +140,7 @@ const Product: React.FC = () => {
 
     useEffect(() => {
         getFavoritesProducts();
-    }, [favoriteProducts]);
+    }, []);
 
     return (
         <Styled.Container>
