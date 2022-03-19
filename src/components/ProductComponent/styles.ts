@@ -83,5 +83,5 @@ export const AddToCard = styled.TouchableOpacity`
     border-bottom-right-radius: 20px;
 
     right: 1px;
-    top: 22px;
+    top: 18px;
 `;
