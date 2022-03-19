@@ -48,3 +48,5 @@ export const DeleteButtonContent = styled.View`
 `;
 
 export const DeleteButton = styled.TouchableOpacity``;
+
+export const Loader = styled.ActivityIndicator``;

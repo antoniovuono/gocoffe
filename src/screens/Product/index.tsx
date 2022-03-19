@@ -24,6 +24,7 @@ const Product: React.FC = () => {
     const [selectedButtonL, setSelectedButtonL] = useState(false);
     const [selectedSize, setSelectedSize] = useState('');
     const [favorites, setFavorites] = useState<IProducts[]>([]);
+    const [loading, setLoading] = useState(false);
 
     const theme = useTheme();
     const navigation = useNavigation();
@@ -83,6 +84,7 @@ const Product: React.FC = () => {
 
     const handleFavoriteProduct = () => {
         try {
+            setLoading(true);
             const productFavorited = favorites.find(element => {
                 return element.id === products_data.id;
             });
@@ -131,6 +133,8 @@ const Product: React.FC = () => {
                 text1: 'Opps!',
                 text2: 'Unable to favorite product!',
             });
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -154,16 +158,20 @@ const Product: React.FC = () => {
 
                 <Styled.HeaderTitle>{products_data.name}</Styled.HeaderTitle>
 
-                <Styled.ButtonFavoriteProduct
-                    hitSlop={{ left: 15, top: 15, right: 15, bottom: 15 }}
-                    onPress={handleFavoriteProduct}
-                >
-                    <MaterialIcons
-                        name="favorite-border"
-                        size={24}
-                        color={theme.COLORS.secondary}
-                    />
-                </Styled.ButtonFavoriteProduct>
+                {loading ? (
+                    <Styled.Loader />
+                ) : (
+                    <Styled.ButtonFavoriteProduct
+                        hitSlop={{ left: 15, top: 15, right: 15, bottom: 15 }}
+                        onPress={handleFavoriteProduct}
+                    >
+                        <MaterialIcons
+                            name="favorite-border"
+                            size={24}
+                            color={theme.COLORS.secondary}
+                        />
+                    </Styled.ButtonFavoriteProduct>
+                )}
             </Styled.Header>
 
             <Styled.ProductPageContent showsVerticalScrollIndicator={false}>

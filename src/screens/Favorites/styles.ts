@@ -54,3 +54,9 @@ export const ProductsFavoritesContainer = styled.View`
 export const FavoritedsList = styled(FlatList).attrs(
     {},
 )`` as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>;
+
+export const Loader = styled.ActivityIndicator.attrs({
+    size: 'small',
+})`
+    margin-top: ${RFValue(20)}px;
+`;

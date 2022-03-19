@@ -193,3 +193,5 @@ export const CheckoutButtonTitle = styled.Text`
     font-size: ${RFValue(16)}px;
     font-family: ${({ theme }) => theme.FONTS.medium};
 `;
+
+export const Loader = styled.ActivityIndicator``;
