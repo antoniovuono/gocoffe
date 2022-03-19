@@ -161,7 +161,7 @@ const Product: React.FC = () => {
                     <MaterialIcons
                         name="favorite-border"
                         size={24}
-                        color={theme.COLORS.primary_title}
+                        color={theme.COLORS.secondary}
                     />
                 </Styled.ButtonFavoriteProduct>
             </Styled.Header>
