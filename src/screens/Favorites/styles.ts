@@ -45,7 +45,7 @@ export const CounterTitle = styled.Text`
     margin-left: ${RFValue(10)}px;
 `;
 
-export const ProductsFavoritesContainer = styled.ScrollView`
+export const ProductsFavoritesContainer = styled.View`
     flex: 1;
     width: 100%;
     padding: 20px;

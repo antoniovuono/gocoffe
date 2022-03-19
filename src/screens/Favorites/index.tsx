@@ -58,6 +58,7 @@ const Favorites: React.FC = () => {
 
             <Styled.ProductsFavoritesContainer>
                 <Styled.FavoritedsList
+                    showsVerticalScrollIndicator={false}
                     data={favoriteds}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (

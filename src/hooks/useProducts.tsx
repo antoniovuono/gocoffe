@@ -18,6 +18,7 @@ interface IProductsContext {
         size: string,
     ) => Promise<any>;
     getFavoritedProducts: () => Promise<any>;
+    removeFavorite: (product_id: string) => Promise<any>;
 }
 
 const ProductContext = createContext<IProductsContext>({} as IProductsContext);
@@ -64,12 +65,19 @@ export const ProductsProvider: React.FC = ({ children }) => {
         return response.data;
     }, []);
 
+    const removeFavorite = useCallback(async (product_id: string) => {
+        const response = await api.delete(`/favorites/${product_id}`);
+
+        return response.data;
+    }, []);
+
     return (
         <ProductContext.Provider
             value={{
                 getProductsDetails,
                 favoriteProducts,
                 getFavoritedProducts,
+                removeFavorite,
             }}
         >
             {children}
