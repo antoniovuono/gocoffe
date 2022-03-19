@@ -5,7 +5,10 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+        "flipperHack": "React Native packager is running"
+      }
   },
   "name": "gocoffe"
 }

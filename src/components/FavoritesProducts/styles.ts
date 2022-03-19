@@ -7,6 +7,7 @@ export const Container = styled.View`
     padding: 8px;
     border-radius: 10px;
     flex-direction: row;
+    margin-bottom: ${RFValue(10)}px;
 `;
 
 export const ProductPhotoContent = styled.View``;

@@ -1,6 +1,8 @@
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import React from 'react';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
 export const Container = styled.View`
     flex: 1;
@@ -48,3 +50,7 @@ export const ProductsFavoritesContainer = styled.ScrollView`
     width: 100%;
     padding: 20px;
 `;
+
+export const FavoritedsList = styled(FlatList).attrs(
+    {},
+)`` as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>;
