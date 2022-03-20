@@ -5,7 +5,9 @@ import * as Styled from './styles';
 const ShoppingCart: React.FC = () => {
     return (
         <Styled.Container>
-            <Styled.Title>Welcome ASV Studio (SHOPPING CART)</Styled.Title>
+            <Styled.Header>
+                <Styled.Title>Shopping cart</Styled.Title>
+            </Styled.Header>
         </Styled.Container>
     );
 };

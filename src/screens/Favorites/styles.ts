@@ -13,7 +13,7 @@ export const Header = styled.View`
     width: 100%;
     padding: 20px;
     flex-direction: row;
-    margin-top: ${getStatusBarHeight() + 5}px;
+    margin-top: ${getStatusBarHeight() + 15}px;
     justify-content: space-between;
     align-items: center;
 `;
