@@ -8,7 +8,7 @@ import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
 import SizeButtons from '../../components/SizeButtons';
 import { IProducts } from '../../interfaces/IProducts';
-import useProducts from '../../hooks/useProducts';
+import useFavorites from '../../hooks/useFavorites';
 
 interface IProductsParmas {
     products_data: IProducts;
@@ -30,7 +30,7 @@ const Product: React.FC = () => {
     const navigation = useNavigation();
     const route = useRoute();
     const { products_data } = route.params as IProductsParmas;
-    const { favoriteProducts, getFavoritedProducts } = useProducts();
+    const { favoriteProducts, getFavoritedProducts } = useFavorites();
 
     const handleGoBack = () => {
         navigation.goBack();

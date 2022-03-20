@@ -14,6 +14,7 @@ import {
 import Routes from './src/routes';
 import theme from './src/theme';
 import { ProductsProvider } from './src/hooks/useProducts';
+import { FavoritesProvider } from './src/hooks/useFavorites';
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -35,8 +36,10 @@ export default function App() {
                 backgroundColor="transparent"
             />
             <ProductsProvider>
-                <Routes />
-                <Toast />
+                <FavoritesProvider>
+                    <Routes />
+                    <Toast />
+                </FavoritesProvider>
             </ProductsProvider>
         </ThemeProvider>
     );

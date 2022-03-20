@@ -1,11 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, {
-    createContext,
-    useCallback,
-    useContext,
-    useState,
-    useEffect,
-} from 'react';
+import React, { createContext, useCallback, useContext } from 'react';
 import api from '../services/apis/gocoffe';
 import { IProducts } from '../interfaces/IProducts';
 

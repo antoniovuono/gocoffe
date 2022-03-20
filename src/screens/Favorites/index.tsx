@@ -5,8 +5,8 @@ import Toast from 'react-native-toast-message';
 import { useFocusEffect } from '@react-navigation/native';
 import * as Styled from './styles';
 import FavoritesProducts from '../../components/FavoritesProducts';
-import useProducts from '../../hooks/useProducts';
 import { IProducts } from '../../interfaces/IProducts';
+import useFavorites from '../../hooks/useFavorites';
 
 const Favorites: React.FC = () => {
     const [favoriteds, setFavoriteds] = useState<IProducts[]>([]);
@@ -14,7 +14,7 @@ const Favorites: React.FC = () => {
     const [loader, setLoader] = useState(false);
 
     const theme = useTheme();
-    const { getFavoritedProducts, removeFavorite } = useProducts();
+    const { getFavoritedProducts, removeFavorite } = useFavorites();
 
     const getFavoritedProduct = async () => {
         setLoading(true);
