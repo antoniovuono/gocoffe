@@ -20,3 +20,24 @@ export const Title = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.semi_bold};
     color: ${({ theme }) => theme.COLORS.primary_title};
 `;
+
+export const CounterContent = styled.View`
+    background-color: ${({ theme }) => theme.COLORS.secondary_dark};
+    padding: 5px;
+    border-radius: 20px;
+    margin-top: ${RFValue(20)}px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+`;
+
+export const CounterTitle = styled.Text`
+    font-size: ${RFValue(11)}px;
+    font-family: ${({ theme }) => theme.FONTS.medium};
+    color: ${({ theme }) => theme.COLORS.secondary};
+    margin-left: ${RFValue(10)}px;
+`;
+
+export const CartProductsList = styled.View`
+    margin-top: 20px;
+`;
