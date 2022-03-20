@@ -9,12 +9,14 @@ interface ISearch extends RectButtonProps {
     button_title: string;
     // eslint-disable-next-line no-unused-vars
     input_value?: ((text: string) => void) | undefined;
+    loading: boolean;
 }
 
 const Search: React.FC<ISearch> = ({
     placeholder,
     button_title,
     input_value,
+    loading,
     ...rest
 }) => {
     const theme = useTheme();
@@ -33,7 +35,11 @@ const Search: React.FC<ISearch> = ({
             </Styled.InputContent>
 
             <Styled.SearchButton {...rest}>
-                <Styled.ButtonTitle>{button_title}</Styled.ButtonTitle>
+                {loading ? (
+                    <Styled.Loader />
+                ) : (
+                    <Styled.ButtonTitle>{button_title}</Styled.ButtonTitle>
+                )}
             </Styled.SearchButton>
         </Styled.Container>
     );

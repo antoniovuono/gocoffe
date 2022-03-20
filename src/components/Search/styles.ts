@@ -39,3 +39,5 @@ export const ButtonTitle = styled.Text`
     font-size: ${RFValue(14)}px;
     color: ${({ theme }) => theme.COLORS.primary_title};
 `;
+
+export const Loader = styled.ActivityIndicator``;

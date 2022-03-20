@@ -14,11 +14,14 @@ const Home: React.FC = () => {
     const [products, setProducts] = useState<IProducts[]>([]);
     const [searchValue, setSearchValue] = useState('');
     const [loading, setLoading] = useState(false);
+    const [buttonLoading, setButtonLoading] = useState(false);
 
     const { getProductsDetails } = useProducts();
     const navigation = useNavigation();
 
     const handleSearchByProducts = () => {
+        setButtonLoading(true);
+
         const filteredByDetail = (element: IProducts) => {
             return element.type === searchValue;
         };
@@ -40,6 +43,7 @@ const Home: React.FC = () => {
                 text2: 'No products found...',
             });
         }
+        setButtonLoading(false);
     };
 
     const fetchProducts = async () => {
@@ -161,7 +165,7 @@ const Home: React.FC = () => {
                     />
                     <Styled.SignOutButton
                         hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}
-                        // onPress={}
+                        onPress={() => {}}
                     >
                         <Styled.SignOut>Sign out</Styled.SignOut>
                     </Styled.SignOutButton>
@@ -175,6 +179,7 @@ const Home: React.FC = () => {
                         button_title="Search"
                         input_value={setSearchValue}
                         onPress={handleSearchByProducts}
+                        loading={buttonLoading}
                     />
                 </TouchableWithoutFeedback>
             </Styled.SearchSection>
