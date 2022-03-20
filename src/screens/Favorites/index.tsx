@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
+import { useFocusEffect } from '@react-navigation/native';
 import * as Styled from './styles';
 import FavoritesProducts from '../../components/FavoritesProducts';
 import useProducts from '../../hooks/useProducts';
@@ -46,9 +47,11 @@ const Favorites: React.FC = () => {
         }
     };
 
-    useEffect(() => {
-        getFavoritedProduct();
-    }, [loader]);
+    useFocusEffect(
+        React.useCallback(() => {
+            getFavoritedProduct();
+        }, [loader]),
+    );
 
     return (
         <Styled.Container>
