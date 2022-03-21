@@ -58,9 +58,15 @@ export const Amount = styled.Text<{ amount?: boolean }>`
         `}
 `;
 
-export const Quantity = styled.Text`
+export const Quantity = styled.Text<{ quantity?: boolean }>`
     font-family: ${({ theme }) => theme.FONTS.medium};
     font-size: ${RFValue(11)}px;
     color: ${({ theme }) => theme.COLORS.secondary};
     margin-right: 15px;
+
+    ${({ quantity }) =>
+        quantity &&
+        css`
+            color: ${({ theme }) => theme.COLORS.primary_title};
+        `}
 `;

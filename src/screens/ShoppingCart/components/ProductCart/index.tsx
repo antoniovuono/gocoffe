@@ -25,7 +25,9 @@ const ProductCart: React.FC = () => {
                     <Styled.Amount>
                         <Styled.Amount amount>$ </Styled.Amount>4.56
                     </Styled.Amount>
-                    <Styled.Quantity>Quantity: 3</Styled.Quantity>
+                    <Styled.Quantity>
+                        Quantity: <Styled.Quantity quantity>3</Styled.Quantity>
+                    </Styled.Quantity>
                 </Styled.FooterContent>
             </Styled.DetailsContent>
         </Styled.Container>
