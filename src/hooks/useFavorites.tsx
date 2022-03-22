@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useCallback, useContext } from 'react';
 import api from '../services/apis/gocoffe';
-import { IProducts } from '../interfaces/IProducts';
 
 interface IFavoritesContext {
     getFavoritedProducts: () => Promise<any>;
