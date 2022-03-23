@@ -10,8 +10,8 @@ interface ICheckoutContext {
 const CheckoutContent = createContext<ICheckoutContext>({} as ICheckoutContext);
 
 export const CheckoutProvider: React.FC = ({ children }) => {
-    const addProductToCart = useCallback(async (product_car: ICheckout) => {
-        const response = await api.post(`/cart`, { product_car });
+    const addProductToCart = useCallback(async (product_cart: ICheckout) => {
+        const response = await api.post(`/cart`, { product_cart });
 
         return response.data;
     }, []);
