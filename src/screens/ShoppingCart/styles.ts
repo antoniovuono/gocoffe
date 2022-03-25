@@ -42,7 +42,6 @@ export const CounterTitle = styled.Text`
 
 export const CartProductsList = styled.View`
     flex: 1;
-    margin-top: 20px;
     justify-content: center;
     padding: 8px;
 `;
@@ -74,7 +73,7 @@ export const TotalAmountText = styled.Text`
     color: ${({ theme }) => theme.COLORS.primary_title};
 `;
 
-export const ButtonCheckout = styled.View`
+export const ButtonCheckout = styled.TouchableOpacity`
     width: 100%;
     background-color: ${({ theme }) => theme.COLORS.secondary};
     padding: 15px;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
+import { useFocusEffect } from '@react-navigation/native';
 import * as Styled from './styles';
 import ProductCart from './components/ProductCart/index';
 import { ICheckout } from '../../interfaces/ICheckout';
@@ -10,27 +11,47 @@ import useCheckout from '../../hooks/useCheckout';
 const ShoppingCart: React.FC = () => {
     const [cart, setCart] = useState<ICheckout[]>([]);
     const [productsLoading, setProductsLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const { getCartProductsList } = useCheckout();
+    const { getCartProductsList, removeProduct } = useCheckout();
     const theme = useTheme();
 
     const getCartProducts = async () => {
+        setProductsLoading(true);
         try {
             const products_cart = await getCartProductsList();
             setCart(products_cart);
-            setProductsLoading(false);
         } catch (error) {
             Toast.show({
                 type: 'error',
                 text1: 'Opps!',
                 text2: 'Error to loading cart products!',
             });
+        } finally {
+            setProductsLoading(false);
         }
     };
 
-    useEffect(() => {
-        getCartProducts();
-    }, [cart]);
+    const handleDeleteProduct = async (id: string) => {
+        try {
+            setLoading(true);
+            await removeProduct(id);
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Opps!',
+                text2: 'Error to remove product!',
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useFocusEffect(
+        React.useCallback(() => {
+            getCartProducts();
+        }, [loading]),
+    );
 
     return (
         <Styled.Container>
@@ -60,6 +81,9 @@ const ShoppingCart: React.FC = () => {
                         keyExtractor={item => item.id}
                         renderItem={({ item }) => (
                             <ProductCart
+                                onDeletePress={() =>
+                                    handleDeleteProduct(item.id)
+                                }
                                 photo={item.photo}
                                 title={item.name}
                                 type={item.type}

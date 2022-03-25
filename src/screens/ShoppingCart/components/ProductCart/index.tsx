@@ -8,6 +8,7 @@ interface ICartProducts {
     type: string;
     price: number;
     quantity: number;
+    onDeletePress: () => void;
 }
 
 const ProductCart: React.FC<ICartProducts> = ({
@@ -16,9 +17,10 @@ const ProductCart: React.FC<ICartProducts> = ({
     type,
     price,
     quantity,
+    onDeletePress,
 }) => {
     return (
-        <Styled.Container>
+        <Styled.Container onLongPress={onDeletePress}>
             <Styled.PhotoContent>
                 <Styled.Photo
                     source={{
