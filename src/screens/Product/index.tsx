@@ -143,29 +143,36 @@ const Product: React.FC = () => {
 
     const handleAddToCart = async () => {
         try {
-            setLoader(true);
-            const id = uuid.v4();
-            const { name, type, photo, description } = products_data;
-            const price = Number(checkoutPriceCalculator());
-            const size = selectedSize;
+            if (quantity !== 0 && !!selectedSize) {
+                setLoader(true);
+                const id = uuid.v4();
+                const { name, type, photo, description } = products_data;
+                const price = Number(checkoutPriceCalculator());
+                const size = selectedSize;
 
-            await addProductToCart(
-                id,
-                name,
-                type,
-                photo,
-                description,
-                quantity,
-                size,
-                price,
-            );
-
-            Toast.show({
-                type: 'success',
-                text1: 'Good job!',
-                text2: 'Product added to the cart',
-            });
-            navigation.navigate('ShoppingCart');
+                await addProductToCart(
+                    id,
+                    name,
+                    type,
+                    photo,
+                    description,
+                    quantity,
+                    size,
+                    price,
+                );
+                Toast.show({
+                    type: 'success',
+                    text1: 'Good job!',
+                    text2: 'Product successfully added to cart',
+                });
+                navigation.navigate('ShoppingCart');
+            } else {
+                Toast.show({
+                    type: 'error',
+                    text1: 'Ops!!',
+                    text2: 'You need to select a size and quantity',
+                });
+            }
         } catch (error) {
             Toast.show({
                 type: 'error',
@@ -173,7 +180,7 @@ const Product: React.FC = () => {
                 text2: 'Error to add product to the cart',
             });
         } finally {
-            setLoader(true);
+            setLoader(false);
         }
     };
 
