@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
+import { useFocusEffect } from '@react-navigation/native';
 import * as Styled from './styles';
 import ProductCart from './components/ProductCart/index';
 import { ICheckout } from '../../interfaces/ICheckout';
@@ -9,10 +10,13 @@ import useCheckout from '../../hooks/useCheckout';
 
 const ShoppingCart: React.FC = () => {
     const [cart, setCart] = useState<ICheckout[]>([]);
+    const [productsLoading, setProductsLoading] = useState(false);
 
     const { getCartProductsList } = useCheckout();
+    const theme = useTheme();
 
     const getCartProducts = async () => {
+        setProductsLoading(true);
         try {
             const products_cart = await getCartProductsList();
             setCart(products_cart);
@@ -22,14 +26,15 @@ const ShoppingCart: React.FC = () => {
                 text1: 'Opps!',
                 text2: 'Error to loading cart products!',
             });
+        } finally {
+            setProductsLoading(false);
         }
     };
 
     useEffect(() => {
         getCartProducts();
-    }, [cart]);
+    }, []);
 
-    const theme = useTheme();
     return (
         <Styled.Container>
             <Styled.Header>
@@ -49,19 +54,24 @@ const ShoppingCart: React.FC = () => {
             </Styled.CounterContent>
 
             <Styled.CartProductsList>
-                <Styled.ProductsList
-                    data={cart}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item }) => (
-                        <ProductCart
-                            photo={item.photo}
-                            title={item.name}
-                            type={item.type}
-                            price={item.price}
-                            quantity={item.quantity}
-                        />
-                    )}
-                />
+                {productsLoading ? (
+                    <Styled.Loader color={theme.COLORS.secondary} />
+                ) : (
+                    <Styled.ProductsList
+                        showsVerticalScrollIndicator={false}
+                        data={cart}
+                        keyExtractor={item => item.id}
+                        renderItem={({ item }) => (
+                            <ProductCart
+                                photo={item.photo}
+                                title={item.name}
+                                type={item.type}
+                                price={item.price}
+                                quantity={item.quantity}
+                            />
+                        )}
+                    />
+                )}
             </Styled.CartProductsList>
 
             <Styled.FooterContent>

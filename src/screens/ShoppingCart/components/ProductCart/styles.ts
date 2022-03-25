@@ -21,7 +21,6 @@ export const Photo = styled.Image`
 
 export const DetailsContent = styled.View`
     padding: 10px 5px;
-    flex: 1;
 `;
 
 export const TitlesContent = styled.View`
@@ -41,10 +40,11 @@ export const ProductSubTitle = styled.Text`
 `;
 
 export const FooterContent = styled.View`
-    flex: 1;
+    width: 65%;
     flex-direction: row;
     justify-content: space-between;
     margin-top: ${RFValue(25)}px;
+    align-items: center;
 `;
 
 export const Amount = styled.Text<{ amount?: boolean }>`

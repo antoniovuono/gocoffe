@@ -43,6 +43,8 @@ export const CounterTitle = styled.Text`
 export const CartProductsList = styled.View`
     margin-top: 20px;
     flex: 1;
+    justify-content: center;
+    padding: 8px;
 `;
 
 export const ProductsList = styled(FlatList).attrs(
@@ -87,3 +89,5 @@ export const ButtonCheckoutLabel = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.medium};
     color: ${({ theme }) => theme.COLORS.primary_title};
 `;
+
+export const Loader = styled.ActivityIndicator``;
