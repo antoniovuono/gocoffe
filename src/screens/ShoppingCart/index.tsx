@@ -51,7 +51,15 @@ const ShoppingCart: React.FC = () => {
                 <Styled.ProductsList
                     data={cart}
                     keyExtractor={item => item.id}
-                    renderItem={({ item }) => <ProductCart />}
+                    renderItem={({ item }) => (
+                        <ProductCart
+                            photo={item.photo}
+                            title={item.name}
+                            type={item.type}
+                            price={item.price}
+                            quantity={item.quantity}
+                        />
+                    )}
                 />
             </Styled.CartProductsList>
 

@@ -2,31 +2,45 @@ import React from 'react';
 
 import * as Styled from './styles';
 
-const ProductCart: React.FC = () => {
+interface ICartProducts {
+    photo: string;
+    title: string;
+    type: string;
+    price: number;
+    quantity: number;
+}
+
+const ProductCart: React.FC<ICartProducts> = ({
+    photo,
+    title,
+    type,
+    price,
+    quantity,
+}) => {
     return (
         <Styled.Container>
             <Styled.PhotoContent>
                 <Styled.Photo
                     source={{
-                        uri: 'https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png',
+                        uri: photo,
                     }}
                 />
             </Styled.PhotoContent>
 
             <Styled.DetailsContent>
                 <Styled.TitlesContent>
-                    <Styled.ProductTitle>Cappuccino</Styled.ProductTitle>
-                    <Styled.ProductSubTitle>
-                        With chocolate
-                    </Styled.ProductSubTitle>
+                    <Styled.ProductTitle>{title}</Styled.ProductTitle>
+                    <Styled.ProductSubTitle>{type}</Styled.ProductSubTitle>
                 </Styled.TitlesContent>
 
                 <Styled.FooterContent>
                     <Styled.Amount>
-                        <Styled.Amount amount>$ </Styled.Amount>4.56
+                        <Styled.Amount amount>$ </Styled.Amount>
+                        {price}
                     </Styled.Amount>
                     <Styled.Quantity>
-                        Quantity: <Styled.Quantity quantity>3</Styled.Quantity>
+                        Quantity:{' '}
+                        <Styled.Quantity quantity>{quantity}</Styled.Quantity>
                     </Styled.Quantity>
                 </Styled.FooterContent>
             </Styled.DetailsContent>
