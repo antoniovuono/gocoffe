@@ -131,54 +131,34 @@
   ],
   "cart": [
     {
-      "id": "b2ae1989-f5f7-486d-ae1a-317e259d0754",
+      "id": "38fafe00-6272-4ef9-bea9-28e01e5f5045",
       "name": "Cappuccino",
       "type": "With cream",
       "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
       "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
-      "quantity": 30,
-      "size": "",
-      "price": 129
+      "quantity": 2,
+      "size": "L",
+      "price": 8.6
     },
     {
-      "id": "4af01d4b-fc29-41d3-b5f0-dab37122ed48",
+      "id": "523c12c4-3ad8-40c6-8767-4013370055ea",
       "name": "Cappuccino",
       "type": "With chocolate",
       "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
       "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
       "quantity": 1,
-      "size": "",
-      "price": 4.5
+      "size": "S",
+      "price": 1.75
     },
     {
-      "id": "a77e75d8-6269-4b6d-9705-ab75c6bda886",
-      "name": "American",
-      "type": "American",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png",
-      "description": "Caffè Americano (also known as Americano or American; Italian pronunciation: [kafˈfɛ ameriˈkaːno]; Spanish: café americano, literally American coffee) is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
-      "quantity": 0,
-      "size": "",
-      "price": 0
-    },
-    {
-      "id": "fc5bfd93-cf92-4c9b-8239-190abadd58e3",
-      "name": "American",
-      "type": "American",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png",
-      "description": "Caffè Americano (also known as Americano or American; Italian pronunciation: [kafˈfɛ ameriˈkaːno]; Spanish: café americano, literally American coffee) is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
-      "quantity": 1,
-      "size": "M",
-      "price": 3.33
-    },
-    {
-      "id": "a81279c1-9aec-497a-8afc-87396c6464d0",
-      "name": "Espresso",
-      "type": "Romano",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142799/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.39.51_wp3u71.png",
-      "description": "The espresso romano is made by combining an espresso shot with a lemon slice or lemon juice and a teaspoon of sugar. The slice can be squeezed or dropped into the coffee, and is sometimes candied. It's a versatile drink that can be served hot, cold, or iced – and with or without milk.",
+      "id": "0e4b6514-0d6b-460a-a414-c6c2db5daa43",
+      "name": "Cappuccino",
+      "type": "With cream",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+      "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
       "quantity": 1,
       "size": "S",
-      "price": 3.3
+      "price": 1.4
     }
   ],
   "orders": [],

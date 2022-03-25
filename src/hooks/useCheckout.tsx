@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useCallback } from 'react';
-import { string } from 'yup';
 import api from '../services/apis/gocoffe';
 
 interface ICheckoutContext {

@@ -53,6 +53,15 @@ const ShoppingCart: React.FC = () => {
         }
     };
 
+    const orderPriceExctration = cart.map(element => {
+        return element.price;
+    });
+
+    const totalOrder = orderPriceExctration.reduce(
+        (prev, current) => prev + current,
+        0,
+    );
+
     useFocusEffect(
         React.useCallback(() => {
             getCartProducts();
@@ -104,7 +113,9 @@ const ShoppingCart: React.FC = () => {
             <Styled.FooterContent>
                 <Styled.TitleContent>
                     <Styled.TotalLabel>Total price</Styled.TotalLabel>
-                    <Styled.TotalAmountText>R$ 14.94</Styled.TotalAmountText>
+                    <Styled.TotalAmountText>
+                        R$ {totalOrder}
+                    </Styled.TotalAmountText>
                 </Styled.TitleContent>
 
                 <Styled.ButtonCheckout>
