@@ -157,6 +157,14 @@ const Product: React.FC = () => {
                 size,
                 price,
             );
+
+            Toast.show({
+                type: 'success',
+                text1: 'Good job!',
+                text2: 'Product added to the cart',
+            });
+
+            navigation.navigate('ShoppingCart');
         } catch (error) {
             Toast.show({
                 type: 'error',
