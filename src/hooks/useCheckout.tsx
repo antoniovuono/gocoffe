@@ -13,6 +13,7 @@ interface ICheckoutContext {
         size: string,
         price: number,
     ) => Promise<any>;
+    getCartProductsList: () => Promise<any>;
 }
 
 const CheckoutContent = createContext<ICheckoutContext>({} as ICheckoutContext);
@@ -45,8 +46,15 @@ export const CheckoutProvider: React.FC = ({ children }) => {
         [],
     );
 
+    const getCartProductsList = useCallback(async () => {
+        const response = await api.get(`/cart`);
+        return response.data;
+    }, []);
+
     return (
-        <CheckoutContent.Provider value={{ addProductToCart }}>
+        <CheckoutContent.Provider
+            value={{ addProductToCart, getCartProductsList }}
+        >
             {children}
         </CheckoutContent.Provider>
     );

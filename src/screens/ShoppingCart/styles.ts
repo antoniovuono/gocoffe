@@ -40,4 +40,44 @@ export const CounterTitle = styled.Text`
 
 export const CartProductsList = styled.View`
     margin-top: 20px;
+    flex: 1;
+`;
+
+export const FooterContent = styled.View`
+    width: 100%;
+    padding: 5px;
+`;
+
+export const TitleContent = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const TotalLabel = styled.Text`
+    font-size: ${RFValue(12)}px;
+    font-family: ${({ theme }) => theme.FONTS.regular};
+    color: ${({ theme }) => theme.COLORS.primary_title};
+`;
+
+export const TotalAmountText = styled.Text`
+    font-size: ${RFValue(18)}px;
+    font-family: ${({ theme }) => theme.FONTS.medium};
+    color: ${({ theme }) => theme.COLORS.primary_title};
+`;
+
+export const ButtonCheckout = styled.View`
+    width: 100%;
+    background-color: ${({ theme }) => theme.COLORS.secondary};
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+`;
+
+export const ButtonCheckoutLabel = styled.Text`
+    font-size: ${RFValue(12)}px;
+    font-family: ${({ theme }) => theme.FONTS.medium};
+    color: ${({ theme }) => theme.COLORS.primary_title};
 `;

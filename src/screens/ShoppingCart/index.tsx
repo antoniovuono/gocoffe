@@ -26,6 +26,19 @@ const ShoppingCart: React.FC = () => {
             <Styled.CartProductsList>
                 <ProductCart />
             </Styled.CartProductsList>
+
+            <Styled.FooterContent>
+                <Styled.TitleContent>
+                    <Styled.TotalLabel>Total price</Styled.TotalLabel>
+                    <Styled.TotalAmountText>R$ 14.94</Styled.TotalAmountText>
+                </Styled.TitleContent>
+
+                <Styled.ButtonCheckout>
+                    <Styled.ButtonCheckoutLabel>
+                        Checkout
+                    </Styled.ButtonCheckoutLabel>
+                </Styled.ButtonCheckout>
+            </Styled.FooterContent>
         </Styled.Container>
     );
 };

@@ -163,7 +163,6 @@ const Product: React.FC = () => {
                 text1: 'Good job!',
                 text2: 'Product added to the cart',
             });
-
             navigation.navigate('ShoppingCart');
         } catch (error) {
             Toast.show({

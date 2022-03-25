@@ -149,6 +149,16 @@
       "quantity": 1,
       "size": "L",
       "price": 4.5
+    },
+    {
+      "id": "81fbfb90-e56a-48b5-9732-8d794fa6e272",
+      "name": "Cappuccino",
+      "type": "With cream",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+      "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+      "quantity": 0,
+      "size": "",
+      "price": 0
     }
   ],
   "orders": [],
