@@ -6,6 +6,7 @@ export const Container = styled.View`
     flex-direction: row;
     background-color: ${({ theme }) => theme.COLORS.secondary_background};
     border-radius: 20px;
+    margin-top: 10px;
 `;
 
 export const PhotoContent = styled.View`

@@ -1,6 +1,8 @@
+import React from 'react';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
 export const Container = styled.View`
     flex: 1;
@@ -42,6 +44,10 @@ export const CartProductsList = styled.View`
     margin-top: 20px;
     flex: 1;
 `;
+
+export const ProductsList = styled(FlatList).attrs(
+    {},
+)`` as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>;
 
 export const FooterContent = styled.View`
     width: 100%;
