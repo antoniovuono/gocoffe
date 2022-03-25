@@ -41,8 +41,8 @@ export const CounterTitle = styled.Text`
 `;
 
 export const CartProductsList = styled.View`
-    margin-top: 20px;
     flex: 1;
+    margin-top: 20px;
     justify-content: center;
     padding: 8px;
 `;

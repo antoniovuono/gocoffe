@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
-import { useFocusEffect } from '@react-navigation/native';
 import * as Styled from './styles';
 import ProductCart from './components/ProductCart/index';
 import { ICheckout } from '../../interfaces/ICheckout';
@@ -16,24 +15,22 @@ const ShoppingCart: React.FC = () => {
     const theme = useTheme();
 
     const getCartProducts = async () => {
-        setProductsLoading(true);
         try {
             const products_cart = await getCartProductsList();
             setCart(products_cart);
+            setProductsLoading(false);
         } catch (error) {
             Toast.show({
                 type: 'error',
                 text1: 'Opps!',
                 text2: 'Error to loading cart products!',
             });
-        } finally {
-            setProductsLoading(false);
         }
     };
 
     useEffect(() => {
         getCartProducts();
-    }, []);
+    }, [cart]);
 
     return (
         <Styled.Container>
