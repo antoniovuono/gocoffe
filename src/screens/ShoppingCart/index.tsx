@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
@@ -36,6 +36,12 @@ const ShoppingCart: React.FC = () => {
         try {
             setLoading(true);
             await removeProduct(id);
+
+            Toast.show({
+                type: 'success',
+                text1: 'Good job!',
+                text2: 'Product removed successfully',
+            });
         } catch (error) {
             Toast.show({
                 type: 'error',

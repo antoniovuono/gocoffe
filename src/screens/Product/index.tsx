@@ -27,6 +27,7 @@ const Product: React.FC = () => {
     const [selectedSize, setSelectedSize] = useState('');
     const [favorites, setFavorites] = useState<IProducts[]>([]);
     const [loading, setLoading] = useState(false);
+    const [loader, setLoader] = useState(false);
 
     const theme = useTheme();
     const navigation = useNavigation();
@@ -142,6 +143,7 @@ const Product: React.FC = () => {
 
     const handleAddToCart = async () => {
         try {
+            setLoader(true);
             const id = uuid.v4();
             const { name, type, photo, description } = products_data;
             const price = Number(checkoutPriceCalculator());
@@ -170,6 +172,8 @@ const Product: React.FC = () => {
                 text1: 'Ops!!',
                 text2: 'Error to add product to the cart',
             });
+        } finally {
+            setLoader(true);
         }
     };
 
@@ -320,9 +324,15 @@ const Product: React.FC = () => {
                             activeOpacity={0.5}
                             onPress={handleAddToCart}
                         >
-                            <Styled.CheckoutButtonTitle>
-                                Add to cart
-                            </Styled.CheckoutButtonTitle>
+                            {loader ? (
+                                <Styled.Loader
+                                    color={theme.COLORS.primary_title}
+                                />
+                            ) : (
+                                <Styled.CheckoutButtonTitle>
+                                    Add to cart
+                                </Styled.CheckoutButtonTitle>
+                            )}
                         </Styled.CheckoutButton>
                     </Styled.ButtonSection>
                 </Styled.CheckoutSection>
