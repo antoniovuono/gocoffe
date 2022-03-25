@@ -27,7 +27,7 @@ const ShoppingCart: React.FC = () => {
 
     useEffect(() => {
         getCartProducts();
-    }, []);
+    }, [cart]);
 
     const theme = useTheme();
     return (
@@ -43,7 +43,8 @@ const ShoppingCart: React.FC = () => {
                     color={theme.COLORS.secondary}
                 />
                 <Styled.CounterTitle>
-                    You have 2 items in your shopping cart
+                    You have {cart.length} {cart.length <= 1 ? 'item' : 'items'}{' '}
+                    in your shopping cart
                 </Styled.CounterTitle>
             </Styled.CounterContent>
 

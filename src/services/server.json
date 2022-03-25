@@ -159,6 +159,16 @@
       "quantity": 0,
       "size": "",
       "price": 0
+    },
+    {
+      "id": "23572278-bf8a-48f6-b8c7-01d9ea0ee898",
+      "name": "Cappuccino",
+      "type": "With chocolate",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
+      "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
+      "quantity": 0,
+      "size": "",
+      "price": 0
     }
   ],
   "orders": [],
