@@ -4,11 +4,13 @@ import NumericInput from 'react-native-numeric-input';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
+import uuid from 'react-native-uuid';
 import StarIcon from '../../assets/icons/star.svg';
 import * as Styled from './styles';
 import SizeButtons from '../../components/SizeButtons';
 import { IProducts } from '../../interfaces/IProducts';
 import useFavorites from '../../hooks/useFavorites';
+import useCheckout from '../../hooks/useCheckout';
 
 interface IProductsParmas {
     products_data: IProducts;
@@ -31,6 +33,7 @@ const Product: React.FC = () => {
     const route = useRoute();
     const { products_data } = route.params as IProductsParmas;
     const { favoriteProducts, getFavoritedProducts } = useFavorites();
+    const { addProductToCart } = useCheckout();
 
     const handleGoBack = () => {
         navigation.goBack();
@@ -69,7 +72,6 @@ const Product: React.FC = () => {
 
     const checkoutPriceCalculator = () => {
         const totalPrice = quantity * priceCalculator();
-
         return totalPrice.toFixed(2);
     };
 
@@ -135,6 +137,32 @@ const Product: React.FC = () => {
             });
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleAddToCart = async () => {
+        try {
+            const id = uuid.v4();
+            const { name, type, photo, description } = products_data;
+            const price = Number(checkoutPriceCalculator());
+            const size = selectedSize;
+
+            await addProductToCart(
+                id,
+                name,
+                type,
+                photo,
+                description,
+                quantity,
+                size,
+                price,
+            );
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Ops!!',
+                text2: 'Error to add product to the cart',
+            });
         }
     };
 
@@ -281,7 +309,10 @@ const Product: React.FC = () => {
                     </Styled.OrderPrice>
 
                     <Styled.ButtonSection>
-                        <Styled.CheckoutButton activeOpacity={0.5}>
+                        <Styled.CheckoutButton
+                            activeOpacity={0.5}
+                            onPress={handleAddToCart}
+                        >
                             <Styled.CheckoutButtonTitle>
                                 Add to cart
                             </Styled.CheckoutButtonTitle>

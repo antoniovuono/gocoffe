@@ -1,20 +1,49 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useCallback } from 'react';
-import { ICheckout } from '../interfaces/ICheckout';
 import api from '../services/apis/gocoffe';
 
 interface ICheckoutContext {
-    addProductToCart: (product_cart: ICheckout) => Promise<any>;
+    addProductToCart: (
+        id: string | number[],
+        name: string,
+        type: string,
+        photo: string,
+        description: string,
+        quantity: number,
+        size: string,
+        price: number,
+    ) => Promise<any>;
 }
 
 const CheckoutContent = createContext<ICheckoutContext>({} as ICheckoutContext);
 
 export const CheckoutProvider: React.FC = ({ children }) => {
-    const addProductToCart = useCallback(async (product_cart: ICheckout) => {
-        const response = await api.post(`/cart`, { product_cart });
+    const addProductToCart = useCallback(
+        async (
+            id: string | number[],
+            name: string,
+            type: string,
+            photo: string,
+            description: string,
+            quantity: number,
+            size: string,
+            price: number,
+        ) => {
+            const response = await api.post(`/cart`, {
+                id,
+                name,
+                type,
+                photo,
+                description,
+                quantity,
+                size,
+                price,
+            });
 
-        return response.data;
-    }, []);
+            return response.data;
+        },
+        [],
+    );
 
     return (
         <CheckoutContent.Provider value={{ addProductToCart }}>
