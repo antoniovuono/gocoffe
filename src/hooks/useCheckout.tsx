@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useCallback } from 'react';
+import { ICheckout } from '../interfaces/ICheckout';
 import api from '../services/apis/gocoffe';
 
 interface ICheckoutContext {
@@ -15,6 +16,7 @@ interface ICheckoutContext {
     ) => Promise<any>;
     getCartProductsList: () => Promise<any>;
     removeProduct: (product_id: string) => Promise<any>;
+    checkoutOrder: (id: string, product_list: ICheckout[]) => Promise<any>;
 }
 
 const CheckoutContent = createContext<ICheckoutContext>({} as ICheckoutContext);
@@ -58,15 +60,25 @@ export const CheckoutProvider: React.FC = ({ children }) => {
         return response.data;
     }, []);
 
-    const checkoutOrder = useCallback(async () => {
-        const response = await api.post(``);
-
-        return response.data;
-    }, []);
+    const checkoutOrder = useCallback(
+        async (id: string, products_list: ICheckout[]) => {
+            const response = await api.post(`/checkout`, {
+                id,
+                products_list,
+            });
+            return response.data;
+        },
+        [],
+    );
 
     return (
         <CheckoutContent.Provider
-            value={{ addProductToCart, getCartProductsList, removeProduct }}
+            value={{
+                addProductToCart,
+                getCartProductsList,
+                removeProduct,
+                checkoutOrder,
+            }}
         >
             {children}
         </CheckoutContent.Provider>
