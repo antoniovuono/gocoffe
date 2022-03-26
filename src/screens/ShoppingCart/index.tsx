@@ -3,6 +3,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import uuid from 'react-native-uuid';
 import * as Styled from './styles';
 import ProductCart from './components/ProductCart/index';
 import { ICheckout } from '../../interfaces/ICheckout';
@@ -12,8 +13,9 @@ const ShoppingCart: React.FC = () => {
     const [cart, setCart] = useState<ICheckout[]>([]);
     const [productsLoading, setProductsLoading] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [checkoutLoading, setCheckoutLoading] = useState(false);
 
-    const { getCartProductsList, removeProduct } = useCheckout();
+    const { getCartProductsList, removeProduct, checkoutOrder } = useCheckout();
     const theme = useTheme();
     const navigation = useNavigation();
 
@@ -63,8 +65,27 @@ const ShoppingCart: React.FC = () => {
         0,
     );
 
-    const handleCheckout = () => {
-        navigation.navigate('Checkout');
+    const handleCheckout = async () => {
+        try {
+            const id = uuid.v4();
+            setCheckoutLoading(true);
+            await checkoutOrder(id, totalOrder, cart);
+
+            Toast.show({
+                type: 'success',
+                text1: 'Success!',
+                text2: 'Order checkout completed!',
+            });
+            navigation.navigate('Checkout');
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Ops!',
+                text2: 'Error at checkout',
+            });
+        } finally {
+            setCheckoutLoading(false);
+        }
     };
 
     useFocusEffect(
@@ -139,9 +160,13 @@ const ShoppingCart: React.FC = () => {
                 </Styled.TitleContent>
 
                 <Styled.ButtonCheckout onPress={handleCheckout}>
-                    <Styled.ButtonCheckoutLabel>
-                        Checkout
-                    </Styled.ButtonCheckoutLabel>
+                    {checkoutLoading ? (
+                        <Styled.Loader color={theme.COLORS.primary_title} />
+                    ) : (
+                        <Styled.ButtonCheckoutLabel>
+                            Checkout
+                        </Styled.ButtonCheckoutLabel>
+                    )}
                 </Styled.ButtonCheckout>
             </Styled.FooterContent>
         </Styled.Container>

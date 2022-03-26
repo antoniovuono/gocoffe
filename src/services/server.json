@@ -141,6 +141,135 @@
       "price": 8.6
     }
   ],
-  "checkout": [],
+  "checkout": [
+    {
+      "id": "function v4(options, buf, offset) {\n    var i = buf && offset || 0;\n    var rnds = rng_1.rng();\n\n    if (options && !(options instanceof String)) {\n      if (options.random) {\n        rnds = options.random;\n      }\n\n      if (options.rng) {\n        rnds = options.rng();\n      }\n    }\n\n    rnds[6] = rnds[6] & 0x0f | 0x40;\n    rnds[8] = rnds[8] & 0x3f | 0x80;\n\n    if (buf) {\n      for (var ii = 0; ii < 16; ii++) {\n        buf[i + ii] = rnds[ii];\n      }\n    }\n\n    return buf || unparse_1.unparse(rnds);\n  }",
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ]
+    },
+    {
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ],
+      "id": "Gz_ZGPY"
+    },
+    {
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ],
+      "id": "XiT6kWz"
+    },
+    {
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ],
+      "id": "lkP6pgB"
+    },
+    {
+      "id": "e905a733-a8b8-4ec6-b522-a8093154e31c",
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ]
+    },
+    {
+      "id": "69384830-3d82-4ebc-84e3-8e27afbb5fa3",
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ]
+    },
+    {
+      "id": "574508f9-225b-40eb-8819-2493031f28c4",
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ]
+    },
+    {
+      "id": "26327d00-8c8d-4f88-b16e-79893f190489",
+      "total_price": 8.6,
+      "products_list": [
+        {
+          "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "L",
+          "price": 8.6
+        }
+      ]
+    }
+  ],
   "favorites": []
 }
