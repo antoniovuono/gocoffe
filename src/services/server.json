@@ -131,7 +131,7 @@
   ],
   "cart": [
     {
-      "id": "38fafe00-6272-4ef9-bea9-28e01e5f5045",
+      "id": "cb501d00-bd2e-4041-acf6-d8ee82d8a95a",
       "name": "Cappuccino",
       "type": "With cream",
       "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
@@ -139,28 +139,8 @@
       "quantity": 2,
       "size": "L",
       "price": 8.6
-    },
-    {
-      "id": "523c12c4-3ad8-40c6-8767-4013370055ea",
-      "name": "Cappuccino",
-      "type": "With chocolate",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
-      "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
-      "quantity": 1,
-      "size": "S",
-      "price": 1.75
-    },
-    {
-      "id": "0e4b6514-0d6b-460a-a414-c6c2db5daa43",
-      "name": "Cappuccino",
-      "type": "With cream",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
-      "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
-      "quantity": 1,
-      "size": "S",
-      "price": 1.4
     }
   ],
-  "orders": [],
+  "checkout": [],
   "favorites": []
 }

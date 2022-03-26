@@ -1,7 +1,7 @@
 import React from 'react';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { FlatList } from 'react-native';
 
 export const Container = styled.View`
@@ -40,6 +40,20 @@ export const CounterTitle = styled.Text`
     margin-left: ${RFValue(10)}px;
 `;
 
+export const DeleteInformation = styled.View`
+    width: 100%;
+    align-items: flex-end;
+    padding: 5px 10px;
+    flex-direction: row;
+`;
+
+export const DeleteInformationText = styled.Text`
+    font-size: ${RFValue(10)}px;
+    font-family: ${({ theme }) => theme.FONTS.regular};
+    color: ${({ theme }) => theme.COLORS.primary_title};
+    margin-left: 10px;
+`;
+
 export const CartProductsList = styled.View`
     flex: 1;
     justify-content: center;
@@ -67,10 +81,16 @@ export const TotalLabel = styled.Text`
     color: ${({ theme }) => theme.COLORS.primary_title};
 `;
 
-export const TotalAmountText = styled.Text`
+export const TotalAmountText = styled.Text<{ orange?: boolean }>`
     font-size: ${RFValue(18)}px;
     font-family: ${({ theme }) => theme.FONTS.medium};
     color: ${({ theme }) => theme.COLORS.primary_title};
+
+    ${({ orange, theme }) =>
+        orange &&
+        css`
+            color: ${theme.COLORS.secondary};
+        `};
 `;
 
 export const ButtonCheckout = styled.TouchableOpacity`

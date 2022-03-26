@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 import Toast from 'react-native-toast-message';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import * as Styled from './styles';
 import ProductCart from './components/ProductCart/index';
 import { ICheckout } from '../../interfaces/ICheckout';
@@ -15,6 +15,7 @@ const ShoppingCart: React.FC = () => {
 
     const { getCartProductsList, removeProduct } = useCheckout();
     const theme = useTheme();
+    const navigation = useNavigation();
 
     const getCartProducts = async () => {
         setProductsLoading(true);
@@ -62,6 +63,10 @@ const ShoppingCart: React.FC = () => {
         0,
     );
 
+    const handleCheckout = () => {
+        navigation.navigate('Checkout');
+    };
+
     useFocusEffect(
         React.useCallback(() => {
             getCartProducts();
@@ -90,23 +95,35 @@ const ShoppingCart: React.FC = () => {
                 {productsLoading ? (
                     <Styled.Loader color={theme.COLORS.secondary} />
                 ) : (
-                    <Styled.ProductsList
-                        showsVerticalScrollIndicator={false}
-                        data={cart}
-                        keyExtractor={item => item.id}
-                        renderItem={({ item }) => (
-                            <ProductCart
-                                onDeletePress={() =>
-                                    handleDeleteProduct(item.id)
-                                }
-                                photo={item.photo}
-                                title={item.name}
-                                type={item.type}
-                                price={item.price}
-                                quantity={item.quantity}
+                    <>
+                        <Styled.DeleteInformation>
+                            <AntDesign
+                                name="delete"
+                                size={16}
+                                color={theme.COLORS.primary_title}
                             />
-                        )}
-                    />
+                            <Styled.DeleteInformationText>
+                                Hold down pressed to remove product to the cart
+                            </Styled.DeleteInformationText>
+                        </Styled.DeleteInformation>
+                        <Styled.ProductsList
+                            showsVerticalScrollIndicator={false}
+                            data={cart}
+                            keyExtractor={item => item.id}
+                            renderItem={({ item }) => (
+                                <ProductCart
+                                    onDeletePress={() =>
+                                        handleDeleteProduct(item.id)
+                                    }
+                                    photo={item.photo}
+                                    title={item.name}
+                                    type={item.type}
+                                    price={item.price}
+                                    quantity={item.quantity}
+                                />
+                            )}
+                        />
+                    </>
                 )}
             </Styled.CartProductsList>
 
@@ -114,11 +131,14 @@ const ShoppingCart: React.FC = () => {
                 <Styled.TitleContent>
                     <Styled.TotalLabel>Total price</Styled.TotalLabel>
                     <Styled.TotalAmountText>
-                        R$ {totalOrder}
+                        <Styled.TotalAmountText orange>
+                            $
+                        </Styled.TotalAmountText>{' '}
+                        {totalOrder}
                     </Styled.TotalAmountText>
                 </Styled.TitleContent>
 
-                <Styled.ButtonCheckout>
+                <Styled.ButtonCheckout onPress={handleCheckout}>
                     <Styled.ButtonCheckoutLabel>
                         Checkout
                     </Styled.ButtonCheckoutLabel>

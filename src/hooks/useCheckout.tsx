@@ -58,6 +58,12 @@ export const CheckoutProvider: React.FC = ({ children }) => {
         return response.data;
     }, []);
 
+    const checkoutOrder = useCallback(async () => {
+        const response = await api.post(``);
+
+        return response.data;
+    }, []);
+
     return (
         <CheckoutContent.Provider
             value={{ addProductToCart, getCartProductsList, removeProduct }}
