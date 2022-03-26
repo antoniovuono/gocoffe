@@ -139,6 +139,16 @@
       "quantity": 2,
       "size": "L",
       "price": 8.6
+    },
+    {
+      "id": "09c5f3f9-e65a-4139-ad13-ad547761043b",
+      "name": "Espresso",
+      "type": "Lungo",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142581/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.36.13_x71wfn.png",
+      "description": "Lungo is a coffee beverage made by using an espresso machine to make an Italian-style coffee – short black (a single espresso shot) with more water (generally twice as much), resulting in a larger coffee, a lungo.",
+      "quantity": 1,
+      "size": "M",
+      "price": 3.3
     }
   ],
   "checkout": [

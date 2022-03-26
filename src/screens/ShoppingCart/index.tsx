@@ -155,7 +155,7 @@ const ShoppingCart: React.FC = () => {
                         <Styled.TotalAmountText orange>
                             $
                         </Styled.TotalAmountText>{' '}
-                        {totalOrder}
+                        {totalOrder.toFixed(2)}
                     </Styled.TotalAmountText>
                 </Styled.TitleContent>
 
