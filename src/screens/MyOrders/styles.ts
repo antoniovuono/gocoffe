@@ -28,3 +28,5 @@ export const SearchSection = styled.View`
     width: 100%;
     margin-top: ${RFValue(20)}px;
 `;
+
+export const MyOrdersContent = styled.View``;
