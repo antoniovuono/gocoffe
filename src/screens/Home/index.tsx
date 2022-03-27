@@ -15,6 +15,10 @@ const Home: React.FC = () => {
     const [searchValue, setSearchValue] = useState('');
     const [loading, setLoading] = useState(false);
     const [buttonLoading, setButtonLoading] = useState(false);
+    const [selectedAll, setSelectedAll] = useState(false);
+    const [selectedEspresso, setSelectedEspresso] = useState(false);
+    const [selectedCappuccino, setSelectedCappuccino] = useState(false);
+    const [selectedAmerican, setSelectedAmerican] = useState(false);
 
     const { getProductsDetails } = useProducts();
     const navigation = useNavigation();
@@ -47,6 +51,11 @@ const Home: React.FC = () => {
     };
 
     const fetchProducts = async () => {
+        setSelectedAll(!selectedAll);
+        setSelectedEspresso(false);
+        setSelectedAmerican(false);
+        setSelectedCappuccino(false);
+
         setLoading(true);
         try {
             const response = await getProductsDetails();
@@ -63,6 +72,11 @@ const Home: React.FC = () => {
     };
 
     const handleSearchByEspresso = async () => {
+        setSelectedEspresso(!selectedEspresso);
+        setSelectedCappuccino(false);
+        setSelectedAmerican(false);
+        setSelectedAll(false);
+
         setLoading(true);
         try {
             const response = await getProductsDetails();
@@ -86,6 +100,10 @@ const Home: React.FC = () => {
     };
 
     const handleSearchByCappuccino = async () => {
+        setSelectedCappuccino(!selectedCappuccino);
+        setSelectedAll(false);
+        setSelectedEspresso(false);
+        setSelectedAmerican(false);
         setLoading(true);
         try {
             const response = await getProductsDetails();
@@ -109,6 +127,10 @@ const Home: React.FC = () => {
     };
 
     const handleSearchByAmerican = async () => {
+        setSelectedAmerican(!selectedAmerican);
+        setSelectedAll(false);
+        setSelectedEspresso(false);
+        setSelectedCappuccino(false);
         setLoading(true);
         try {
             const response = await getProductsDetails();
@@ -191,18 +213,25 @@ const Home: React.FC = () => {
             </Styled.PromotionContent>
 
             <Styled.FilterButtons>
-                <ButtonCarousell title="All" onPress={fetchProducts} />
+                <ButtonCarousell
+                    title="All"
+                    onPress={fetchProducts}
+                    selected_item={selectedAll}
+                />
                 <ButtonCarousell
                     title="Espresso"
                     onPress={handleSearchByEspresso}
+                    selected_item={selectedEspresso}
                 />
                 <ButtonCarousell
                     title="Cappuccino"
                     onPress={handleSearchByCappuccino}
+                    selected_item={selectedCappuccino}
                 />
                 <ButtonCarousell
                     title="American"
                     onPress={handleSearchByAmerican}
+                    selected_item={selectedAmerican}
                 />
             </Styled.FilterButtons>
 
