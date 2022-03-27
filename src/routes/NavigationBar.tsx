@@ -1,7 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from 'styled-components';
-import { Foundation, Feather, MaterialIcons } from '@expo/vector-icons';
+import {
+    Foundation,
+    Feather,
+    MaterialIcons,
+    FontAwesome5,
+} from '@expo/vector-icons';
 import Home from '../screens/Home';
 import MyOrders from '../screens/MyOrders';
 import ShoppingCart from '../screens/ShoppingCart';
@@ -77,8 +82,8 @@ const NavigationBar: React.FC = () => {
                 component={MyOrders}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <MaterialIcons
-                            name="dashboard"
+                        <FontAwesome5
+                            name="list-alt"
                             size={size}
                             color={color}
                         />

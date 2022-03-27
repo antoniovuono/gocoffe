@@ -15,7 +15,8 @@ const ShoppingCart: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [checkoutLoading, setCheckoutLoading] = useState(false);
 
-    const { getCartProductsList, removeProduct, checkoutOrder } = useCheckout();
+    const { getCartProductsList, removeProduct, checkoutOrder, clearCart } =
+        useCheckout();
     const theme = useTheme();
     const navigation = useNavigation();
 
@@ -70,6 +71,10 @@ const ShoppingCart: React.FC = () => {
             const id = uuid.v4();
             setCheckoutLoading(true);
             await checkoutOrder(id, totalOrder, cart);
+
+            // const cart_products = cart.map(element => {
+            //     return element.id;
+            // });
 
             Toast.show({
                 type: 'success',
