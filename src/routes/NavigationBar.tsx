@@ -10,7 +10,6 @@ import {
 import Home from '../screens/Home';
 import MyOrders from '../screens/MyOrders';
 import ShoppingCart from '../screens/ShoppingCart';
-import Messages from '../screens/Messages';
 import Favorites from '../screens/Favorites';
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -52,15 +51,6 @@ const NavigationBar: React.FC = () => {
                             size={size}
                             color={color}
                         />
-                    ),
-                }}
-            />
-            <Screen
-                name="Messages"
-                component={Messages}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialIcons name="email" size={size} color={color} />
                     ),
                 }}
             />

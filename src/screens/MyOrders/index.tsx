@@ -5,7 +5,10 @@ import * as Styled from './styles';
 const MyOrders: React.FC = () => {
     return (
         <Styled.Container>
-            <Styled.Title>Welcome ASV Studio (MY ORDERS)</Styled.Title>
+            <Styled.Header>
+                <Styled.SubTitle>Find yours orders</Styled.SubTitle>
+                <Styled.Title>My orders</Styled.Title>
+            </Styled.Header>
         </Styled.Container>
     );
 };
