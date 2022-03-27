@@ -23,3 +23,8 @@ export const Title = styled.Text`
     color: ${({ theme }) => theme.COLORS.primary_title};
     font-size: ${RFValue(24)}px;
 `;
+
+export const SearchSection = styled.View`
+    width: 100%;
+    margin-top: ${RFValue(20)}px;
+`;
