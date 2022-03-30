@@ -36,7 +36,7 @@ export const CounterOrdersContent = styled.View`
 export const CounterOrders = styled.Text`
     color: ${({ theme }) => theme.COLORS.secondary};
     font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(28)}px;
+    font-size: ${RFValue(18)}px;
     text-align: right;
 `;
 
