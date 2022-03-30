@@ -3,7 +3,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const ButtonProductType = styled(RectButton)<{ selected?: boolean }>`
-    padding: 10px 20px;
+    padding: 10px 18px;
     height: 40px;
 
     ${({ selected }) =>
