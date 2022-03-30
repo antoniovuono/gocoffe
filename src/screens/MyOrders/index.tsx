@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Search from '../../components/Search';
+import MyOrder from './components/MyOrder';
 
 import * as Styled from './styles';
 
@@ -26,6 +27,14 @@ const MyOrders: React.FC = () => {
                     </TouchableWithoutFeedback>
                 </Styled.SearchSection>
             </Styled.Header>
+
+            <Styled.CounterOrdersContent>
+                <Styled.CounterOrders>You have 3 orders</Styled.CounterOrders>
+            </Styled.CounterOrdersContent>
+
+            <Styled.MyOrdersContent>
+                <MyOrder />
+            </Styled.MyOrdersContent>
         </Styled.Container>
     );
 };

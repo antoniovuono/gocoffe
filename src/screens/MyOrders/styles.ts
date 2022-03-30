@@ -29,4 +29,15 @@ export const SearchSection = styled.View`
     margin-top: ${RFValue(20)}px;
 `;
 
+export const CounterOrdersContent = styled.View`
+    padding: 25px 10px;
+`;
+
+export const CounterOrders = styled.Text`
+    color: ${({ theme }) => theme.COLORS.secondary};
+    font-family: ${({ theme }) => theme.FONTS.regular};
+    font-size: ${RFValue(28)}px;
+    text-align: right;
+`;
+
 export const MyOrdersContent = styled.View``;
