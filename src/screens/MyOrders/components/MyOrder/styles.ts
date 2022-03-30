@@ -16,7 +16,7 @@ export const FirstContent = styled.View`
 export const OrderId = styled.Text<{ orange?: boolean }>`
     color: ${({ theme }) => theme.COLORS.primary_title};
     font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(22)}px;
+    font-size: ${RFValue(16)}px;
 
     ${({ orange }) =>
         orange &&
@@ -28,7 +28,7 @@ export const OrderId = styled.Text<{ orange?: boolean }>`
 export const Date = styled.Text`
     color: ${({ theme }) => theme.COLORS.secondary};
     font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(22)}px;
+    font-size: ${RFValue(16)}px;
 `;
 
 export const OrdersDetails = styled.View`
@@ -40,13 +40,13 @@ export const OrdersDetails = styled.View`
 export const Detail = styled.Text`
     color: ${({ theme }) => theme.COLORS.primary_title};
     font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(20)}px;
+    font-size: ${RFValue(12)}px;
 `;
 
 export const Amount = styled.Text<{ dollar?: boolean }>`
     color: ${({ theme }) => theme.COLORS.primary_title};
     font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(23)}px;
+    font-size: ${RFValue(12)}px;
 
     ${({ dollar }) =>
         dollar &&
