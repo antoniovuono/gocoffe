@@ -26,7 +26,7 @@ export const OrderId = styled.Text<{ orange?: boolean }>`
 `;
 
 export const Date = styled.Text`
-    color: ${({ theme }) => theme.COLORS.secondary};
+    color: ${({ theme }) => theme.COLORS.primary_title};
     font-family: ${({ theme }) => theme.FONTS.regular};
     font-size: ${RFValue(12)}px;
 `;
@@ -56,13 +56,13 @@ export const Amount = styled.Text<{ dollar?: boolean }>`
 `;
 
 export const TotalPriceContent = styled.View`
-    margin-top: 20px;
+    margin-top: 10px;
 `;
 
 export const TotalPrice = styled.Text<{ dollar2?: boolean }>`
     color: ${({ theme }) => theme.COLORS.primary_title};
     font-family: ${({ theme }) => theme.FONTS.medium};
-    font-size: ${RFValue(13)}px;
+    font-size: ${RFValue(12)}px;
     text-align: right;
 
     ${({ dollar2 }) =>

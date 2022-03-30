@@ -36,6 +36,12 @@ const Favorites: React.FC = () => {
         try {
             setLoader(true);
             await removeFavorite(id);
+
+            Toast.show({
+                type: 'success',
+                text1: 'Success!',
+                text2: 'Product removed from favorites!',
+            });
         } catch (error) {
             Toast.show({
                 type: 'error',
