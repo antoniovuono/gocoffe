@@ -3,6 +3,7 @@ import { TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Toast from 'react-native-toast-message';
 import Search from '../../components/Search';
 import useCheckout from '../../hooks/useCheckout';
+import { IOrders } from '../../interfaces/IOrders';
 import MyOrder from './components/MyOrder';
 
 import * as Styled from './styles';
@@ -10,7 +11,7 @@ import * as Styled from './styles';
 const MyOrders: React.FC = () => {
     const [searchValue, setSearchValue] = useState('');
     const [buttoLoading, setButtonLoading] = useState(false);
-    const [myOrdersList, setMyOrdersList] = useState([]);
+    const [myOrdersList, setMyOrdersList] = useState<IOrders[]>([]);
 
     const { getOrders } = useCheckout();
 
@@ -57,6 +58,7 @@ const MyOrders: React.FC = () => {
 
             <Styled.MyOrdersContent>
                 <Styled.OrdersList
+                    showsVerticalScrollIndicator={false}
                     data={myOrdersList}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => <MyOrder />}

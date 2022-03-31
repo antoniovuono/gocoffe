@@ -32,7 +32,8 @@ export const SearchSection = styled.View`
 `;
 
 export const CounterOrdersContent = styled.View`
-    padding: 25px 10px;
+    margin-top: 20px;
+    padding: 5px;
 `;
 
 export const CounterOrders = styled.Text`
