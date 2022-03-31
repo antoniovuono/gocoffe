@@ -30,12 +30,6 @@ const MyOrder: React.FC = () => {
                     <Styled.Amount dollar>$</Styled.Amount> 4.90
                 </Styled.Amount>
             </Styled.OrdersDetails>
-
-            <Styled.TotalPriceContent>
-                <Styled.TotalPrice>
-                    Total: <Styled.TotalPrice dollar2>$</Styled.TotalPrice> 4,90
-                </Styled.TotalPrice>
-            </Styled.TotalPriceContent>
         </Styled.Container>
     );
 };

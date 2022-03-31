@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TouchableWithoutFeedback, Keyboard } from 'react-native';
+import Toast from 'react-native-toast-message';
 import Search from '../../components/Search';
+import useCheckout from '../../hooks/useCheckout';
 import MyOrder from './components/MyOrder';
 
 import * as Styled from './styles';
@@ -8,6 +10,27 @@ import * as Styled from './styles';
 const MyOrders: React.FC = () => {
     const [searchValue, setSearchValue] = useState('');
     const [buttoLoading, setButtonLoading] = useState(false);
+    const [myOrdersList, setMyOrdersList] = useState([]);
+
+    const { getOrders } = useCheckout();
+
+    const getYourOrders = async () => {
+        try {
+            const response = await getOrders();
+
+            setMyOrdersList(response);
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Ops!',
+                text2: 'Error to load your orders!',
+            });
+        }
+    };
+
+    useEffect(() => {
+        getYourOrders();
+    }, []);
 
     return (
         <Styled.Container>
@@ -33,7 +56,11 @@ const MyOrders: React.FC = () => {
             </Styled.CounterOrdersContent>
 
             <Styled.MyOrdersContent>
-                <MyOrder />
+                <Styled.OrdersList
+                    data={myOrdersList}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => <MyOrder />}
+                />
             </Styled.MyOrdersContent>
         </Styled.Container>
     );

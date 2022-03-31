@@ -1,3 +1,5 @@
+import React from 'react';
+import { FlatList } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
@@ -40,4 +42,10 @@ export const CounterOrders = styled.Text`
     text-align: right;
 `;
 
-export const MyOrdersContent = styled.View``;
+export const MyOrdersContent = styled.View`
+    flex: 1;
+`;
+
+export const OrdersList = styled(FlatList).attrs(
+    {},
+)`` as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>;

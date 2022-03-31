@@ -23,6 +23,7 @@ interface ICheckoutContext {
         product_list: ICheckout[],
     ) => Promise<any>;
     clearCart: (product_id: string[]) => Promise<any>;
+    getOrders: () => Promise<any>;
 }
 
 const CheckoutContent = createContext<ICheckoutContext>({} as ICheckoutContext);
@@ -78,6 +79,12 @@ export const CheckoutProvider: React.FC = ({ children }) => {
         [],
     );
 
+    const getOrders = useCallback(async () => {
+        const response = await api.get(`/checkout`);
+
+        return response.data;
+    }, []);
+
     const clearCart = useCallback(async (product_id: string[]) => {
         const response = await api.delete(`/cart/${product_id}`);
 
@@ -92,6 +99,7 @@ export const CheckoutProvider: React.FC = ({ children }) => {
                 removeProduct,
                 checkoutOrder,
                 clearCart,
+                getOrders,
             }}
         >
             {children}

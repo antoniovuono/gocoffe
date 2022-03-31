@@ -5,6 +5,7 @@ export const Container = styled.View`
     background-color: ${({ theme }) => theme.COLORS.secondary_background};
     padding: 20px;
     border-radius: 20px;
+    margin-top: 10px;
 `;
 
 export const FirstContent = styled.View`
