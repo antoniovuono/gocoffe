@@ -61,7 +61,9 @@ const MyOrders: React.FC = () => {
                     showsVerticalScrollIndicator={false}
                     data={myOrdersList}
                     keyExtractor={item => item.id}
-                    renderItem={({ item }) => <MyOrder />}
+                    renderItem={({ item }) => (
+                        <MyOrder order_id="121231" date="29/09/2022" />
+                    )}
                 />
             </Styled.MyOrdersContent>
         </Styled.Container>

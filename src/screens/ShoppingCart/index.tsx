@@ -68,9 +68,11 @@ const ShoppingCart: React.FC = () => {
 
     const handleCheckout = async () => {
         try {
-            const id = uuid.v4();
+            const id = new Date().getTime().toString();
+            const currentDate = new Date();
+
             setCheckoutLoading(true);
-            await checkoutOrder(id, totalOrder, cart);
+            await checkoutOrder(id, currentDate, totalOrder, cart);
 
             // const cart_products = cart.map(element => {
             //     return element.id;

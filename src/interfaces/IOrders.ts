@@ -1,5 +1,6 @@
 export interface IOrders {
     id: string;
+    date: string;
     total_price: number;
     products_list: [
         {
