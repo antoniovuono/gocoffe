@@ -61,9 +61,16 @@ const MyOrders: React.FC = () => {
                     showsVerticalScrollIndicator={false}
                     data={myOrdersList}
                     keyExtractor={item => item.id}
-                    renderItem={({ item }) => (
-                        <MyOrder order_id="121231" date="29/09/2022" />
-                    )}
+                    renderItem={({ item }) => {
+                        const currentDate = Intl.DateTimeFormat('pt-BR', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: '2-digit',
+                        }).format(new Date(item.date));
+                        return (
+                            <MyOrder order_id={item.id} date={currentDate} />
+                        );
+                    }}
                 />
             </Styled.MyOrdersContent>
         </Styled.Container>

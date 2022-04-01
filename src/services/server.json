@@ -131,28 +131,71 @@
   ],
   "cart": [
     {
-      "id": "c5b23182-c141-4afc-8b74-dd5509d8a803",
-      "name": "Cappuccino",
-      "type": "With chocolate",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
-      "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
-      "quantity": 1,
-      "size": "M",
-      "price": 2.75
-    },
-    {
-      "id": "466280bd-d9c8-460a-92b3-cbbd56111d58",
+      "id": "32b42ee3-f921-4918-a7e0-33400f52a0f9",
       "name": "Cappuccino",
       "type": "With cream",
       "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
       "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
-      "quantity": 1,
+      "quantity": 2,
       "size": "M",
-      "price": 2.4
+      "price": 4.8
+    },
+    {
+      "id": "bd15ab17-a9e6-4192-9e07-a06681974189",
+      "name": "Espresso",
+      "type": "Romano",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142799/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.39.51_wp3u71.png",
+      "description": "The espresso romano is made by combining an espresso shot with a lemon slice or lemon juice and a teaspoon of sugar. The slice can be squeezed or dropped into the coffee, and is sometimes candied. It's a versatile drink that can be served hot, cold, or iced – and with or without milk.",
+      "quantity": 1,
+      "size": "L",
+      "price": 6.75
     }
   ],
   "checkout": [
-
+    {
+      "id": "1648816065404",
+      "date": "2022-04-01T12:27:45.404Z",
+      "total_price": 5.5,
+      "products_list": [
+        {
+          "id": "f2e9d159-48eb-4b77-94a9-3886be771c08",
+          "name": "Cappuccino",
+          "type": "With chocolate",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121470/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.44.07_d5oewv.png",
+          "description": "Like café latte, café mocha is based on espresso and hot milk but with added chocolate flavouring and sweetener, typically in the form of cocoa powder and sugar. Many varieties use chocolate syrup instead, and some may contain dark or milk chocolate",
+          "quantity": 2,
+          "size": "M",
+          "price": 5.5
+        }
+      ]
+    },
+    {
+      "id": "1648816093918",
+      "date": "2022-04-01T12:28:13.918Z",
+      "total_price": 11.55,
+      "products_list": [
+        {
+          "id": "32b42ee3-f921-4918-a7e0-33400f52a0f9",
+          "name": "Cappuccino",
+          "type": "With cream",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
+          "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+          "quantity": 2,
+          "size": "M",
+          "price": 4.8
+        },
+        {
+          "id": "bd15ab17-a9e6-4192-9e07-a06681974189",
+          "name": "Espresso",
+          "type": "Romano",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142799/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.39.51_wp3u71.png",
+          "description": "The espresso romano is made by combining an espresso shot with a lemon slice or lemon juice and a teaspoon of sugar. The slice can be squeezed or dropped into the coffee, and is sometimes candied. It's a versatile drink that can be served hot, cold, or iced – and with or without milk.",
+          "quantity": 1,
+          "size": "L",
+          "price": 6.75
+        }
+      ]
+    }
   ],
   "favorites": []
 }
