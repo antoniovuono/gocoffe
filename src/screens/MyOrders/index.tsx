@@ -68,10 +68,6 @@ const MyOrders: React.FC = () => {
                             year: '2-digit',
                         }).format(new Date(item.date));
 
-                        const name = item.products_list.map(element => {
-                            return element.name;
-                        });
-
                         return (
                             <MyOrder
                                 order_id={item.id}
