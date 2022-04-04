@@ -34,19 +34,28 @@ export const SearchSection = styled.View`
 export const CounterOrdersContent = styled.View`
     margin-top: 20px;
     padding: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 `;
 
 export const CounterOrders = styled.Text`
     color: ${({ theme }) => theme.COLORS.secondary};
     font-family: ${({ theme }) => theme.FONTS.regular};
     font-size: ${RFValue(12)}px;
-    text-align: right;
+
+    margin-left: 5px;
 `;
+
+export const Reload = styled.TouchableOpacity``;
 
 export const MyOrdersContent = styled.View`
     flex: 1;
+    justify-content: center;
 `;
 
 export const OrdersList = styled(FlatList).attrs(
     {},
 )`` as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>;
+
+export const Loader = styled.ActivityIndicator``;
