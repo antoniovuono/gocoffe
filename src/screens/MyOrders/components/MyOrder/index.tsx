@@ -5,9 +5,10 @@ import * as Styled from './styles';
 interface IOrdersDetails {
     order_id: string;
     date: string;
+    total: number;
 }
 
-const MyOrder: React.FC<IOrdersDetails> = ({ order_id, date }) => {
+const MyOrder: React.FC<IOrdersDetails> = ({ order_id, date, total }) => {
     return (
         <Styled.Container>
             <Styled.FirstContent>
@@ -18,9 +19,9 @@ const MyOrder: React.FC<IOrdersDetails> = ({ order_id, date }) => {
             </Styled.FirstContent>
 
             <Styled.OrdersDetails>
-                <Styled.Detail>1x Capuccino with chocolate </Styled.Detail>
+                <Styled.Detail>Total price:</Styled.Detail>
                 <Styled.Amount>
-                    <Styled.Amount dollar>$</Styled.Amount> 4.90
+                    <Styled.Amount dollar>$</Styled.Amount> {total}
                 </Styled.Amount>
             </Styled.OrdersDetails>
         </Styled.Container>

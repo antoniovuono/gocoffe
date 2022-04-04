@@ -35,19 +35,21 @@ export const Date = styled.Text`
 export const OrdersDetails = styled.View`
     margin-top: 5px;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
 `;
 
 export const Detail = styled.Text`
     color: ${({ theme }) => theme.COLORS.primary_title};
-    font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(9)}px;
+    font-family: ${({ theme }) => theme.FONTS.bold};
+    font-size: ${RFValue(12)}px;
 `;
 
 export const Amount = styled.Text<{ dollar?: boolean }>`
     color: ${({ theme }) => theme.COLORS.primary_title};
     font-family: ${({ theme }) => theme.FONTS.regular};
-    font-size: ${RFValue(9)}px;
+    font-size: ${RFValue(12)}px;
+    margin-left: 10px;
 
     ${({ dollar }) =>
         dollar &&

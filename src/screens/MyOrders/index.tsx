@@ -67,8 +67,17 @@ const MyOrders: React.FC = () => {
                             month: '2-digit',
                             year: '2-digit',
                         }).format(new Date(item.date));
+
+                        const name = item.products_list.map(element => {
+                            return element.name;
+                        });
+
                         return (
-                            <MyOrder order_id={item.id} date={currentDate} />
+                            <MyOrder
+                                order_id={item.id}
+                                date={currentDate}
+                                total={item.total_price}
+                            />
                         );
                     }}
                 />
