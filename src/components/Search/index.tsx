@@ -36,7 +36,7 @@ const Search: React.FC<ISearch> = ({
 
             <Styled.SearchButton {...rest}>
                 {loading ? (
-                    <Styled.Loader />
+                    <Styled.Loader color={theme.COLORS.primary_title} />
                 ) : (
                     <Styled.ButtonTitle>{button_title}</Styled.ButtonTitle>
                 )}

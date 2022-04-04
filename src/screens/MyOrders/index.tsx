@@ -30,6 +30,27 @@ const MyOrders: React.FC = () => {
         }
     };
 
+    const handleFilteredOrder = async () => {
+        setButtonLoading(true);
+        try {
+            const response = await getOrders();
+
+            const responseFilter = (element: string) => {
+                return element.id === searchValue;
+            };
+            const filteredOrder = response.filter(responseFilter);
+            setMyOrdersList(filteredOrder);
+        } catch (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'Ops!',
+                text2: 'Error to find your order!',
+            });
+        } finally {
+            setButtonLoading(false);
+        }
+    };
+
     useEffect(() => {
         getYourOrders();
     }, []);
@@ -46,7 +67,7 @@ const MyOrders: React.FC = () => {
                             placeholder="Find your coffee"
                             button_title="Search"
                             input_value={setSearchValue}
-                            onPress={() => {}}
+                            onPress={handleFilteredOrder}
                             loading={buttoLoading}
                         />
                     </TouchableWithoutFeedback>
