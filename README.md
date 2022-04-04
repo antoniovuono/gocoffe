@@ -14,7 +14,6 @@
       <li>React-navigation</li>
       <li>Json-server</li>
       <li>Axios</li>
-      <li>AsyncStorage</li>
       <li>Context</li>
 </ul>
 
