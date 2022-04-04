@@ -4,7 +4,7 @@
 <h3>Design:</h3>
 <link> https://www.figma.com/file/66tt6h7jW1hW1jpyvoZ5G4/Coffe-Shop-App?node-id=0%3A1 </link>
 
-![Captura de Tela 2022-04-04 às 19 27 13](https://user-images.githubusercontent.com/7297243/161642142-9aefbf47-f7e5-44ec-8d57-5698522da715.png)
+![Captura de Tela 2022-04-04 às 19 35 11](https://user-images.githubusercontent.com/7297243/161643018-891a7ac8-6187-4f52-bf09-b4ff880ad599.png)
 
 <h2>TECNOLOGIAS UTILIZADAS:</h2>
 <ul>
@@ -15,7 +15,7 @@
       <li>Json-server</li>
       <li>Axios</li>
       <li>AsyncStorage</li>
-      <li>Login Social (Apple e Google)</li>
+      <li>Context</li>
 </ul>
 
 <h2>Rodando a aplicação:</h2>
