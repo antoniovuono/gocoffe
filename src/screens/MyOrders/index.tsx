@@ -15,10 +15,11 @@ const MyOrders: React.FC = () => {
 
     const { getOrders } = useCheckout();
 
+    const numberOfOrders = myOrdersList.length >= 2 ? 'orders' : 'order';
+
     const getYourOrders = async () => {
         try {
             const response = await getOrders();
-
             setMyOrdersList(response);
         } catch (error) {
             Toast.show({
@@ -53,7 +54,9 @@ const MyOrders: React.FC = () => {
             </Styled.Header>
 
             <Styled.CounterOrdersContent>
-                <Styled.CounterOrders>You have 3 orders</Styled.CounterOrders>
+                <Styled.CounterOrders>
+                    You have {myOrdersList.length} {numberOfOrders}
+                </Styled.CounterOrders>
             </Styled.CounterOrdersContent>
 
             <Styled.MyOrdersContent>

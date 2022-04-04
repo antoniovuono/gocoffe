@@ -131,24 +131,14 @@
   ],
   "cart": [
     {
-      "id": "32b42ee3-f921-4918-a7e0-33400f52a0f9",
-      "name": "Cappuccino",
-      "type": "With cream",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647121663/gocoffe/Captura_de_Tela_2022-03-12_a%CC%80s_18.47.27_nlh7y5.png",
-      "description": "Espresso is generally denser than coffee brewed by other methods, having a higher concentration of suspended and dissolved solids; it generally has a creamy foam on top known as crema. Espresso is the base for a number of other coffee drinks, such as latte, cappuccino, macchiato, mocha, and americano.",
+      "id": "5d4eb5e8-24ef-4bc1-8604-33e0aded6ba2",
+      "name": "American",
+      "type": "American",
+      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png",
+      "description": "Caffè Americano (also known as Americano or American; Italian pronunciation: [kafˈfɛ ameriˈkaːno]; Spanish: café americano, literally American coffee) is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
       "quantity": 2,
-      "size": "M",
-      "price": 4.8
-    },
-    {
-      "id": "bd15ab17-a9e6-4192-9e07-a06681974189",
-      "name": "Espresso",
-      "type": "Romano",
-      "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647142799/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.39.51_wp3u71.png",
-      "description": "The espresso romano is made by combining an espresso shot with a lemon slice or lemon juice and a teaspoon of sugar. The slice can be squeezed or dropped into the coffee, and is sometimes candied. It's a versatile drink that can be served hot, cold, or iced – and with or without milk.",
-      "quantity": 1,
       "size": "L",
-      "price": 6.75
+      "price": 10.6
     }
   ],
   "checkout": [
@@ -193,6 +183,23 @@
           "quantity": 1,
           "size": "L",
           "price": 6.75
+        }
+      ]
+    },
+    {
+      "id": "1649080679288",
+      "date": "2022-04-04T13:57:59.288Z",
+      "total_price": 10.6,
+      "products_list": [
+        {
+          "id": "5d4eb5e8-24ef-4bc1-8604-33e0aded6ba2",
+          "name": "American",
+          "type": "American",
+          "photo": "https://res.cloudinary.com/didxdzbfe/image/upload/v1647143105/gocoffe/Captura_de_Tela_2022-03-13_a%CC%80s_00.44.56_mioql3.png",
+          "description": "Caffè Americano (also known as Americano or American; Italian pronunciation: [kafˈfɛ ameriˈkaːno]; Spanish: café americano, literally American coffee) is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
+          "quantity": 2,
+          "size": "L",
+          "price": 10.6
         }
       ]
     }
